@@ -384,11 +384,71 @@
 <body>
 
 <div class="doc-header">
-  <div class="doc-title">Lovehuddle — Wireframe (v2 · blueprint-aligned)</div>
-  <div class="doc-meta">31 screens · 6 phases</div>
+  <div class="doc-title">Lovehuddle — Wireframe (v6 · complete handover)</div>
+  <div class="doc-meta">55 screens · 8 phases</div>
 </div>
 
 <div class="container">
+
+<!-- PHASE 0 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 0</div>
+    <div class="phase-title">Global states (components · 00_Global page in Figma)</div>
+  </div>
+  <div class="grid">
+
+    <!-- 00a Session expired -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 14px;">
+          <div style="width:54px; height:54px; border-radius:50%; background:#ECECE8; display:flex; align-items:center; justify-content:center; font-size:22px; color:var(--ink-soft);">⌛</div>
+          <div style="text-align:center;">
+            <div class="h">You've been signed out</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">For your safety, sessions end after<br/>a long period of inactivity.</div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5; text-align:center; max-width:170px;">
+            Sign back in to return to Ireland. Your favourites and connections are kept.
+          </div>
+        </div>
+        <div class="btn btn-primary">Sign back in</div>
+        <div class="tiny" style="text-align:center;">Component · used anywhere session expires</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">00a</span>Session expired</div>
+    </div>
+
+    <!-- 00b Notification overlay -->
+    <div class="screen">
+      <div class="screen-frame island" style="position:relative;">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="ambient-orb" style="width:70px; height:70px; bottom:80px; left:-15px; background:rgba(184,212,176,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; opacity:0.55;">
+          <div class="h">Ireland</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub" style="opacity:0.55;">6 nearby · rotating slowly</div>
+        <div class="canvas" style="opacity:0.55;">
+          <div class="floating-tile" style="top:8px; left:14px;"><div class="circle c-rose" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:34px; left:80px;"><div class="circle c-sand" style="width:32px; height:32px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:32px; left:60px;"><div class="circle c-stone" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+        </div>
+        <div style="position:absolute; left:8px; right:8px; top:40px; background:white; border-radius:12px; padding:10px 12px; box-shadow:0 6px 18px rgba(0,0,0,0.18); display:flex; align-items:center; gap:10px;">
+          <div class="circle c-rose" style="width:32px; height:32px;"></div>
+          <div style="flex:1; min-width:0;">
+            <div style="font-size:10px; font-weight:600;">Maya wants to connect</div>
+            <div class="tiny" style="margin-top:1px;">Tap to review · auto-dismiss 5s</div>
+          </div>
+          <div class="tiny">×</div>
+        </div>
+        <div class="tiny" style="text-align:center; margin-top:auto; opacity:0.7;">Component · slides in, slides out, never blocks</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">00b</span>Notification overlay</div>
+    </div>
+
+  </div>
+</section>
 
 <!-- PHASE 1 -->
 <section class="phase">
@@ -425,7 +485,7 @@
             <div class="sub" style="margin-top:6px;">Lovehuddle is not available in your region yet.</div>
           </div>
         </div>
-        <div class="tiny" style="text-align:center;">UK only at launch · Ireland excluded</div>
+        <div class="tiny" style="text-align:center;">We're rolling out gradually.</div>
       </div>
       <div class="screen-label"><span class="screen-num">02</span>Region check</div>
     </div>
@@ -446,6 +506,82 @@
       <div class="screen-label"><span class="screen-num">03</span>Sign up</div>
     </div>
 
+    <!-- 03a Code verification -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Confirm your email</div>
+        <div class="sub">We sent a 6-digit code</div>
+        <div style="height:6px;"></div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5;">
+          Code sent to <strong>m••••@gmail.com</strong>
+        </div>
+        <div class="row" style="justify-content:center; gap:6px; margin-top:8px;">
+          <div style="width:30px; height:38px; border:1.5px solid #1a1a1a; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:500;">4</div>
+          <div style="width:30px; height:38px; border:1.5px solid #1a1a1a; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:500;">8</div>
+          <div style="width:30px; height:38px; border:1.5px solid #1a1a1a; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:500;">2</div>
+          <div style="width:30px; height:38px; border:1.5px solid var(--line); border-radius:6px;"></div>
+          <div style="width:30px; height:38px; border:1.5px solid var(--line); border-radius:6px;"></div>
+          <div style="width:30px; height:38px; border:1.5px solid var(--line); border-radius:6px;"></div>
+        </div>
+        <div class="tiny" style="text-align:center; margin-top:6px;">Didn't get it? <span style="color:#1a1a1a; font-weight:500; text-decoration:underline;">Resend in 0:42</span></div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Verify</div>
+        <div class="btn btn-ghost">Use phone instead</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">03a</span>Code verification</div>
+    </div>
+
+    <!-- 03b Camera permission (native-style) -->
+    <div class="screen">
+      <div class="screen-frame" style="background:#e8e8e6; padding:0; position:relative;">
+        <div class="status" style="padding:16px 12px 0;"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:10px; padding:14px 12px; opacity:0.45;">
+          <div class="h">Verify your ID</div>
+          <div class="sub">Step 2 of 5</div>
+          <div class="box-dashed" style="margin-top:6px;">
+            <div class="circle" style="width:32px; height:32px; margin: 0 auto 8px;"></div>
+            <div style="font-size:10px; font-weight:500;">Upload an ID document</div>
+          </div>
+        </div>
+        <div style="position:absolute; left:8px; right:8px; bottom:14px; background:white; border-radius:14px; padding:14px; box-shadow:0 8px 24px rgba(0,0,0,0.18); display:flex; flex-direction:column; gap:8px;">
+          <div style="text-align:center; font-size:11px; font-weight:600;">"Lovehuddle" wants to access<br/>your Camera</div>
+          <div class="tiny" style="text-align:center; line-height:1.5; color:var(--ink-soft);">Required for ID document capture and your live selfie. Used only during verification.</div>
+          <div style="height:1px; background:var(--line); margin:4px 0;"></div>
+          <div style="font-size:11px; text-align:center; color:#1a1a1a;">Don't Allow</div>
+          <div style="height:1px; background:var(--line);"></div>
+          <div style="font-size:11px; text-align:center; color:#1a1a1a; font-weight:600;">Allow</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">03b</span>Camera permission</div>
+    </div>
+
+    <!-- 03c Microphone permission (native-style) -->
+    <div class="screen">
+      <div class="screen-frame island" style="padding:0; position:relative;">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.4); opacity:0.4;"></div>
+        <div class="status" style="padding:16px 12px 0;"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:6px; padding:14px 12px; opacity:0.45;">
+          <div class="h">Ireland</div>
+          <div class="sub">14 rooms · drifting</div>
+          <div class="canvas">
+            <div class="floating-tile" style="top:8px; left:14px;"><div class="circle c-rose" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+            <div class="floating-tile" style="top:34px; left:80px;"><div class="circle c-sand" style="width:32px; height:32px;"></div><div class="feet"></div></div>
+            <div class="floating-tile" style="bottom:32px; left:60px;"><div class="circle c-stone" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+          </div>
+        </div>
+        <div style="position:absolute; left:8px; right:8px; bottom:14px; background:white; border-radius:14px; padding:14px; box-shadow:0 8px 24px rgba(0,0,0,0.18); display:flex; flex-direction:column; gap:8px;">
+          <div style="text-align:center; font-size:11px; font-weight:600;">"Lovehuddle" wants to access<br/>your Microphone</div>
+          <div class="tiny" style="text-align:center; line-height:1.5; color:var(--ink-soft);">Needed for voice in Huddles. You can stay muted at any time. Listening doesn't require this.</div>
+          <div style="height:1px; background:var(--line); margin:4px 0;"></div>
+          <div style="font-size:11px; text-align:center; color:#1a1a1a;">Don't Allow</div>
+          <div style="height:1px; background:var(--line);"></div>
+          <div style="font-size:11px; text-align:center; color:#1a1a1a; font-weight:600;">Allow</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">03c</span>Mic permission</div>
+    </div>
+
     <!-- 04 ID verify -->
     <div class="screen">
       <div class="screen-frame">
@@ -455,8 +591,8 @@
         <div style="height:4px;"></div>
         <div class="box-dashed">
           <div class="circle" style="width:32px; height:32px; margin: 0 auto 8px;"></div>
-          <div style="font-size:10px; font-weight:500;">UK passport · driving licence</div>
-          <div class="tiny" style="margin-top:6px;">Handled by ID partner</div>
+          <div style="font-size:10px; font-weight:500;">Upload an ID document</div>
+          <div class="tiny" style="margin-top:6px;">Handled by our verification partner</div>
         </div>
         <div style="flex:1;"></div>
         <div class="btn btn-primary">Continue</div>
@@ -464,7 +600,7 @@
       <div class="screen-label"><span class="screen-num">04</span>ID verification</div>
     </div>
 
-    <!-- 05 GDPR consent -->
+    <!-- 05 Consent -->
     <div class="screen">
       <div class="screen-frame">
         <div class="status"><span>9:41</span><span>•••</span></div>
@@ -473,7 +609,7 @@
         <div style="height:4px;"></div>
         <div class="box" style="font-size:9px; line-height:1.5;">
           <div style="font-weight:500; font-size:10px; margin-bottom:4px;">What we store</div>
-          Your live selfie is encrypted (AES-256) and used only to match your future profile photos. We never store your ID document or ID number — only a pass/fail result from our partner.
+          Your live selfie is encrypted and used only to match your future profile photos. Your ID document is handled by our verification partner — we only receive a pass or fail result.
         </div>
         <div class="box" style="font-size:9px; line-height:1.5;">
           <div style="font-weight:500; font-size:10px; margin-bottom:4px;">Your rights</div>
@@ -487,22 +623,171 @@
         <div class="btn btn-primary">Agree & continue</div>
         <div class="btn btn-ghost">Privacy policy</div>
       </div>
-      <div class="screen-label"><span class="screen-num">05</span>GDPR consent</div>
+      <div class="screen-label"><span class="screen-num">05</span>Consent</div>
     </div>
 
-    <!-- 06 Selfie -->
+    <!-- 06a Movement selfie — explanation -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Movement selfie</div>
+        <div class="sub">Step 4 of 5 · Lovehuddle's safety check</div>
+        <div style="height:6px;"></div>
+        <div style="display:flex; justify-content:center; gap:10px; padding:8px 0;">
+          <div style="width:34px; height:44px; border-radius:18px; background:linear-gradient(180deg,#f0d8da 0%,#d8b4b8 100%); position:relative; transform:rotate(-12deg);">
+            <div style="position:absolute; top:10px; left:6px; width:4px; height:4px; border-radius:50%; background:#1a1a1a;"></div>
+            <div style="position:absolute; top:10px; right:6px; width:4px; height:4px; border-radius:50%; background:#1a1a1a;"></div>
+          </div>
+          <div style="width:34px; height:44px; border-radius:18px; background:linear-gradient(180deg,#f0d8da 0%,#d8b4b8 100%); position:relative;">
+            <div style="position:absolute; top:10px; left:10px; width:4px; height:4px; border-radius:50%; background:#1a1a1a;"></div>
+            <div style="position:absolute; top:10px; right:10px; width:4px; height:4px; border-radius:50%; background:#1a1a1a;"></div>
+          </div>
+          <div style="width:34px; height:44px; border-radius:18px; background:linear-gradient(180deg,#f0d8da 0%,#d8b4b8 100%); position:relative; transform:rotate(12deg);">
+            <div style="position:absolute; top:10px; left:6px; width:4px; height:4px; border-radius:50%; background:#1a1a1a;"></div>
+            <div style="position:absolute; top:10px; right:6px; width:4px; height:4px; border-radius:50%; background:#1a1a1a;"></div>
+          </div>
+        </div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5;">
+          A short live capture that confirms you're a real person, right now — not a photo, not a video, not a deepfake.
+        </div>
+        <div class="box" style="font-size:9px; line-height:1.5;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px;">You'll be asked to:</div>
+          1 · Turn your head slowly left<br/>
+          2 · Turn your head slowly right<br/>
+          3 · Blink twice
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">I'm ready</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06a</span>Movement — explained</div>
+    </div>
+
+    <!-- 06b Movement selfie — consent -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Camera & capture consent</div>
+        <div class="sub">Step 4 of 5</div>
+        <div style="height:4px;"></div>
+        <div class="box" style="font-size:9px; line-height:1.5;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px;">By continuing you agree:</div>
+          • Your camera will record a short live capture<br/>
+          • Only frames needed to verify liveness are kept<br/>
+          • The result is linked to your account, not shared<br/>
+          • You can delete it any time by deleting your account
+        </div>
+        <div class="row" style="align-items:flex-start; gap:6px;">
+          <div style="width:14px; height:14px; border:1.5px solid #1a1a1a; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:10px; margin-top:1px; flex-shrink:0;">✓</div>
+          <div class="tiny" style="flex:1;">I consent to the movement selfie capture.</div>
+        </div>
+        <div class="row" style="align-items:flex-start; gap:6px;">
+          <div style="width:14px; height:14px; border:1.5px solid var(--ink-faint); border-radius:3px; flex-shrink:0; margin-top:1px;"></div>
+          <div class="tiny" style="flex:1;">I'm in a well-lit place with my face clearly visible.</div>
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Open camera</div>
+        <div class="btn btn-ghost">Cancel</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06b</span>Movement — consent</div>
+    </div>
+
+    <!-- 06c Movement selfie — instructions / preview -->
     <div class="screen">
       <div class="screen-frame dark">
         <div class="status"><span>9:41</span><span>•••</span></div>
-        <div class="h">Live selfie</div>
-        <div class="sub">Step 4 of 5</div>
-        <div style="flex:1; display:flex; align-items:center; justify-content:center;">
-          <div style="width:110px; height:150px; border:2px dashed rgba(255,255,255,0.3); border-radius:55px;"></div>
+        <div class="h">Get ready</div>
+        <div class="sub" style="color:rgba(255,255,255,0.6);">Hold your phone at eye level</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="width:130px; height:170px; border:2px dashed rgba(255,255,255,0.4); border-radius:65px; position:relative;">
+            <div style="position:absolute; inset:18px; border-radius:60px; background:radial-gradient(ellipse at 50% 35%, rgba(240,216,218,0.4) 0%, rgba(216,180,184,0.2) 60%, transparent 100%);"></div>
+          </div>
+          <div style="position:absolute; top:50%; left:14px; transform:translateY(-50%); font-size:10px; color:rgba(255,255,255,0.4);">←</div>
+          <div style="position:absolute; top:50%; right:14px; transform:translateY(-50%); font-size:10px; color:rgba(255,255,255,0.4);">→</div>
         </div>
-        <div style="font-size:10px; text-align:center; color:rgba(255,255,255,0.7);">Blink slowly · turn head left</div>
-        <div class="btn btn-primary">Capture</div>
+        <div class="row" style="justify-content:center; gap:6px;">
+          <span class="pill" style="background:rgba(255,255,255,0.15); color:white; font-size:8px;">1 · left</span>
+          <span class="pill" style="background:rgba(255,255,255,0.15); color:white; font-size:8px;">2 · right</span>
+          <span class="pill" style="background:rgba(255,255,255,0.15); color:white; font-size:8px;">3 · blink</span>
+        </div>
+        <div style="font-size:10px; text-align:center; color:rgba(255,255,255,0.7);">Position your face inside the oval</div>
+        <div class="btn btn-primary">Start</div>
       </div>
-      <div class="screen-label"><span class="screen-num">06</span>Live selfie</div>
+      <div class="screen-label"><span class="screen-num">06c</span>Movement — instructions</div>
+    </div>
+
+    <!-- 06d Movement selfie — capture (mid-gesture) -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny" style="color:rgba(255,255,255,0.5);">Capturing…</div>
+          <div class="tiny" style="color:rgba(255,255,255,0.5);">●</div>
+        </div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="width:130px; height:170px; border:2px solid #5a9a3a; border-radius:65px; position:relative; box-shadow:0 0 18px rgba(90,154,58,0.4);">
+            <div style="position:absolute; inset:18px; border-radius:60px; background:radial-gradient(ellipse at 30% 35%, rgba(240,216,218,0.5) 0%, rgba(216,180,184,0.25) 60%, transparent 100%); transform:translateX(-4px);"></div>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:14px; font-weight:500; color:white; letter-spacing:0.02em;">Now turn right →</div>
+          <div class="tiny" style="color:rgba(255,255,255,0.5); margin-top:4px;">Step 2 of 3</div>
+        </div>
+        <div style="display:flex; gap:4px; padding:0 4px;">
+          <div style="flex:1; height:3px; background:#5a9a3a; border-radius:2px;"></div>
+          <div style="flex:1; height:3px; background:rgba(90,154,58,0.5); border-radius:2px;"></div>
+          <div style="flex:1; height:3px; background:rgba(255,255,255,0.15); border-radius:2px;"></div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06d</span>Movement — capture</div>
+    </div>
+
+    <!-- 06e Movement selfie — processing -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+          <div style="position:relative; width:64px; height:64px;">
+            <div style="position:absolute; inset:0; border:3px solid var(--line); border-radius:50%;"></div>
+            <div style="position:absolute; inset:0; border:3px solid transparent; border-top-color:#1a1a1a; border-right-color:#1a1a1a; border-radius:50%;"></div>
+            <div style="position:absolute; inset:18px; border-radius:50%; background:linear-gradient(135deg,#f0d8da 0%,#d8b4b8 100%);"></div>
+          </div>
+          <div style="text-align:center;">
+            <div class="h">Checking your capture</div>
+            <div class="sub" style="margin-top:6px;">Usually 5–10 seconds</div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5; text-align:center; max-width:170px;">
+            We're confirming the motion was live and matches a single person.
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center;">Please don't close the app.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06e</span>Movement — processing</div>
+    </div>
+
+    <!-- 06f Movement selfie — result (success + retry split) -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 14px;">
+          <div style="position:relative;">
+            <div style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#f0d8da 0%,#d8b4b8 100%);"></div>
+            <div style="position:absolute; bottom:-4px; right:-4px; width:26px; height:26px; border-radius:50%; background:#5a9a3a; color:white; display:flex; align-items:center; justify-content:center; font-size:13px; border:2px solid white;">✓</div>
+          </div>
+          <div style="text-align:center;">
+            <div class="h">You're verified</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">Live capture confirmed.<br/>This selfie is now your reference photo.</div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5; text-align:center;">
+            All future photos you upload must match this face. Other people never see this capture.
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-ghost" style="flex:1; font-size:9px;">Try again</div>
+          <div class="btn btn-primary" style="flex:1.5;">Continue</div>
+        </div>
+        <div class="tiny" style="text-align:center;">If liveness fails: retry up to 3 times, then human review.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06f</span>Movement — result</div>
     </div>
 
     <!-- 07 Verification failed (retry path) -->
@@ -597,8 +882,18 @@
         </div>
         <div style="height:4px;"></div>
         <div class="tiny">Distance range</div>
-        <div class="input">50 miles ▾</div>
-        <div class="tiny" style="font-size:8px;">20 · 50 · 100 · 150 · 200 · 300 · 400 · 500 · National</div>
+        <div class="box" style="padding:10px 12px;">
+          <div class="row" style="justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+            <div style="font-size:9px; color:var(--ink-soft);">Close</div>
+            <div style="font-size:10px; font-weight:500;">Around me</div>
+            <div style="font-size:9px; color:var(--ink-soft);">Anywhere</div>
+          </div>
+          <div style="position:relative; height:4px; background:var(--line); border-radius:2px;">
+            <div style="position:absolute; left:0; top:0; height:4px; width:42%; background:#1a1a1a; border-radius:2px;"></div>
+            <div style="position:absolute; left:42%; top:50%; transform:translate(-50%,-50%); width:14px; height:14px; border-radius:50%; background:#1a1a1a; border:2px solid white; box-shadow:0 1px 3px rgba(0,0,0,0.2);"></div>
+          </div>
+        </div>
+        <div class="tiny" style="font-size:8px;">Generic distance — units shown by your device locale.</div>
         <div style="flex:1;"></div>
         <div class="btn btn-primary">Next</div>
       </div>
@@ -631,6 +926,63 @@
       <div class="screen-label"><span class="screen-num">11</span>Pick 2 of 11 rooms</div>
     </div>
 
+    <!-- 11a Lifestyle tags (optional) -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">A few more things</div>
+          <div class="tiny" style="font-weight:500;">skip</div>
+        </div>
+        <div class="sub">Optional · helps people who care about these</div>
+        <div style="height:4px;"></div>
+        <div class="col">
+          <div>
+            <div class="tiny" style="margin-bottom:4px; font-weight:500; color:var(--ink);">Drinking</div>
+            <div class="row" style="flex-wrap:wrap;">
+              <span class="pill pill-active">Sometimes</span>
+              <span class="pill">Often</span>
+              <span class="pill">Never</span>
+              <span class="pill">Prefer not to say</span>
+            </div>
+          </div>
+          <div>
+            <div class="tiny" style="margin-bottom:4px; font-weight:500; color:var(--ink);">Smoking</div>
+            <div class="row" style="flex-wrap:wrap;">
+              <span class="pill">Yes</span>
+              <span class="pill pill-active">No</span>
+              <span class="pill">Socially</span>
+            </div>
+          </div>
+          <div>
+            <div class="tiny" style="margin-bottom:4px; font-weight:500; color:var(--ink);">Children</div>
+            <div class="row" style="flex-wrap:wrap;">
+              <span class="pill">Have</span>
+              <span class="pill">Want</span>
+              <span class="pill pill-active">Maybe</span>
+              <span class="pill">No</span>
+            </div>
+          </div>
+          <div>
+            <div class="tiny" style="margin-bottom:4px; font-weight:500; color:var(--ink);">Pets</div>
+            <div class="row" style="flex-wrap:wrap;">
+              <span class="pill pill-active">Dog</span>
+              <span class="pill">Cat</span>
+              <span class="pill">Other</span>
+              <span class="pill">None</span>
+            </div>
+          </div>
+        </div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5; margin-top:6px;">
+          These never affect who you see. They appear on your profile only if you fill them in.
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Save & continue</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">11a</span>Lifestyle tags</div>
+    </div>
+
     <!-- 12 Welcome -->
     <div class="screen">
       <div class="screen-frame welcome">
@@ -659,7 +1011,7 @@
   </div>
   <div class="grid">
 
-    <!-- 13 Ireland main -->
+    <!-- 13a Ireland — quiet (between rotations) -->
     <div class="screen">
       <div class="screen-frame island">
         <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
@@ -670,6 +1022,32 @@
           <div class="circle c-stone" style="width:22px; height:22px;"></div>
         </div>
         <div class="sub">14 rooms · drifting</div>
+        <div class="canvas" style="display:flex; align-items:center; justify-content:center;">
+          <div style="text-align:center; opacity:0.7;">
+            <div style="width:36px; height:36px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(232,220,200,0.3) 70%); margin:0 auto 8px;"></div>
+            <div class="tiny" style="max-width:140px; line-height:1.5;">A few are nearby.<br/>New people drift in slowly.</div>
+          </div>
+        </div>
+        <div class="row" style="margin-top:6px;">
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Rooms</div>
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Saved</div>
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Profile</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13a</span>Ireland — quiet</div>
+    </div>
+
+    <!-- 13b Ireland — populated (rotation active) -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="ambient-orb" style="width:70px; height:70px; bottom:80px; left:-15px; background:rgba(184,212,176,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Ireland</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub">6 nearby · rotating slowly</div>
         <div class="canvas">
           <div class="floating-tile" style="top:8px; left:14px;"><div class="circle c-rose" style="width:28px; height:28px;"></div><div class="feet"></div></div>
           <div class="floating-tile" style="top:34px; left:80px;"><div class="circle c-sand" style="width:32px; height:32px;"></div><div class="feet"></div></div>
@@ -684,7 +1062,118 @@
           <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Profile</div>
         </div>
       </div>
-      <div class="screen-label"><span class="screen-num">13</span>Ireland main</div>
+      <div class="screen-label"><span class="screen-num">13b</span>Ireland — populated</div>
+    </div>
+
+    <!-- 13c Edit profile -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Edit profile</div>
+          <div class="tiny">save</div>
+        </div>
+        <div style="height:4px;"></div>
+        <div class="circle c-rose" style="width:60px; height:60px; margin:4px auto;"></div>
+        <div class="tiny" style="text-align:center;">Photo · verified</div>
+        <div class="divider"></div>
+        <div class="col">
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:10px; font-weight:500;">Maya · 28</div>
+              <div class="tiny">Locked · ID-verified</div>
+            </div>
+            <span class="pill" style="font-size:8px;">🔒</span>
+          </div>
+          <div class="box">
+            <div class="tiny" style="margin-bottom:3px;">Bio</div>
+            <div style="font-size:10px; font-style:italic; color:var(--ink-soft);">"Quietly looking for someone who reads."</div>
+          </div>
+          <div class="box">
+            <div class="tiny" style="margin-bottom:4px;">Two favourite rooms</div>
+            <div class="row">
+              <span class="pill pill-active" style="font-size:9px;">Coffee chat</span>
+              <span class="pill pill-active" style="font-size:9px;">Pets</span>
+            </div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:10px;">Distance range</div>
+            <div class="tiny">Around me ›</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:10px;">Preference</div>
+            <div class="tiny">Everyone ›</div>
+          </div>
+        </div>
+        <div class="tiny" style="margin-top:4px;">Name & age locked to ID. Re-verify to change.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13c</span>Edit profile</div>
+    </div>
+
+    <!-- 13d Edit photos -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Edit photos</div>
+          <div class="tiny">save</div>
+        </div>
+        <div class="sub">Up to 2 · all must match your selfie</div>
+        <div style="height:6px;"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div style="position:relative; aspect-ratio:3/4; border-radius:8px; background:linear-gradient(135deg,#f0c4c0 0%,#d8a098 100%); overflow:hidden;">
+            <div style="position:absolute; top:6px; left:6px; background:#1a1a1a; color:white; font-size:8px; padding:2px 6px; border-radius:4px;">Main</div>
+            <div style="position:absolute; bottom:6px; right:6px; width:18px; height:18px; border-radius:50%; background:rgba(0,0,0,0.55); color:white; display:flex; align-items:center; justify-content:center; font-size:11px;">×</div>
+          </div>
+          <div style="aspect-ratio:3/4; border-radius:8px; border:1.5px dashed var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:var(--screen-bg);">
+            <div style="font-size:18px; color:var(--ink-faint);">+</div>
+            <div class="tiny">Add photo</div>
+          </div>
+        </div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5; margin-top:6px;">
+          <div style="font-weight:500; margin-bottom:3px;">Match check</div>
+          Each photo runs face-match against your live selfie. Mismatches are rejected automatically.
+        </div>
+        <div class="tiny">No filters · no AI edits.</div>
+        <div style="flex:1;"></div>
+        <div class="btn">Replace main photo</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13d</span>Edit photos</div>
+    </div>
+
+    <!-- 13e Edit interests / rooms -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Your two rooms</div>
+          <div class="tiny">save</div>
+        </div>
+        <div class="sub">Pick exactly 2 · 2 of 2 selected</div>
+        <div style="height:4px;"></div>
+        <div class="room-grid">
+          <div class="box selected">Coffee chat ✓</div>
+          <div class="box selected">Pets ✓</div>
+          <div class="box">Outdoor activities</div>
+          <div class="box">Travel & adventure</div>
+          <div class="box">Food & drink</div>
+          <div class="box">Memories</div>
+          <div class="box">Music lovers</div>
+          <div class="box">Movies</div>
+          <div class="box">Hobbies</div>
+          <div class="box">Tech corner</div>
+          <div class="box">Book lovers</div>
+        </div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5; margin-top:6px;">
+          You only see people who share at least one of your two rooms. Changing these will change who appears on the Island.
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Save changes</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13e</span>Edit rooms</div>
     </div>
 
     <!-- 14 Rooms list -->
@@ -726,10 +1215,10 @@
         </div>
         <div class="sub">Ambient · silent · tap a tile</div>
         <div class="canvas" style="margin-top:6px;">
-          <div class="floating-tile" style="top:6px; left:8px;"><div class="circle c-rose" style="width:30px; height:30px;"></div><div class="feet"></div><div class="name">Maya · 28</div><div class="meta">8mi</div></div>
-          <div class="floating-tile" style="top:24px; right:14px;"><div class="circle c-sand" style="width:28px; height:28px;"></div><div class="feet"></div><div class="name">Tom · 31</div><div class="meta">12mi</div></div>
-          <div class="floating-tile" style="top:90px; left:50px;"><div class="circle c-sage" style="width:26px; height:26px;"></div><div class="feet"></div><div class="name">Aoife · 26</div><div class="meta">22mi</div></div>
-          <div class="floating-tile" style="bottom:34px; right:30px;"><div class="circle c-stone" style="width:28px; height:28px;"></div><div class="feet"></div><div class="name">Kev · 34</div><div class="meta">5mi</div></div>
+          <div class="floating-tile" style="top:6px; left:8px;"><div class="circle c-rose" style="width:30px; height:30px;"></div><div class="feet"></div><div class="name">Maya · 28</div><div class="meta">nearby</div></div>
+          <div class="floating-tile" style="top:24px; right:14px;"><div class="circle c-sand" style="width:28px; height:28px;"></div><div class="feet"></div><div class="name">Tom · 31</div><div class="meta">close</div></div>
+          <div class="floating-tile" style="top:90px; left:50px;"><div class="circle c-sage" style="width:26px; height:26px;"></div><div class="feet"></div><div class="name">Aoife · 26</div><div class="meta">further</div></div>
+          <div class="floating-tile" style="bottom:34px; right:30px;"><div class="circle c-stone" style="width:28px; height:28px;"></div><div class="feet"></div><div class="name">Kev · 34</div><div class="meta">very close</div></div>
         </div>
         <div class="box-soft" style="font-size:9px; display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.4);">
           <div class="glow-object"></div>
@@ -749,7 +1238,7 @@
         <div class="circle c-rose" style="width:80px; height:80px; margin:8px auto 4px;"></div>
         <div style="text-align:center;">
           <div class="h">Maya · 28</div>
-          <div class="sub">8 miles away</div>
+          <div class="sub">Nearby</div>
         </div>
         <div class="row" style="justify-content:center;">
           <span class="pill">Coffee chat</span>
@@ -777,6 +1266,61 @@
     <div class="phase-title">Main Huddle</div>
   </div>
   <div class="grid">
+
+    <!-- 16a Skipton unlock -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:120px; height:120px; top:20px; right:-30px; background:rgba(255,220,180,0.5);"></div>
+        <div class="ambient-orb" style="width:80px; height:80px; bottom:60px; left:-20px; background:rgba(184,212,176,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 14px; position:relative;">
+          <div style="width:64px; height:64px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #ffe4b8 0%, #d4a574 55%, #8a6840 100%); box-shadow:0 0 24px rgba(212,165,116,0.6), 0 0 8px rgba(255,228,184,0.8);"></div>
+          <div style="text-align:center;">
+            <div class="h" style="font-size:14px;">Skipton is open to you</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">You've spent calm time in Ireland.<br/>The Main Huddle is now available.</div>
+          </div>
+          <div class="box-soft" style="background:rgba(255,255,255,0.55); font-size:9px; line-height:1.5; text-align:center;">
+            8-min voice · 2-min optional video<br/>2 to 20 people · locks once it begins
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-ghost" style="flex:1;">Not yet</div>
+          <div class="btn btn-primary" style="flex:1;">Enter Skipton</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">16a</span>Skipton unlock</div>
+    </div>
+
+    <!-- 16b Room icon — inbound -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← Ireland</div>
+          <div class="tiny">⚑</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:0 10px; position:relative;">
+          <div style="position:relative;">
+            <div class="circle c-sand" style="width:54px; height:54px;"></div>
+            <div style="position:absolute; bottom:-4px; right:-6px; width:22px; height:22px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #ffe4b8 0%, #d4a574 55%, #8a6840 100%); box-shadow:0 0 10px rgba(212,165,116,0.7); border:2px solid white;"></div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px; font-weight:500;">Tom · 31 sent you a Room Icon</div>
+            <div class="sub" style="margin-top:4px;">Coffee chat · Main Huddle</div>
+          </div>
+          <div class="box-soft" style="background:rgba(255,255,255,0.55); font-size:9px; line-height:1.5; text-align:center; max-width:170px;">
+            Direct entry to a Huddle.<br/>30s arrival · locks at 2 users.
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center;">Decline silently if you'd rather not.</div>
+        <div class="row">
+          <div class="btn" style="flex:1;">Decline</div>
+          <div class="btn btn-primary" style="flex:1;">Enter</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">16b</span>Room icon — inbound</div>
+    </div>
 
     <!-- 17 Arrival -->
     <div class="screen">
@@ -957,27 +1501,58 @@
         <div class="col">
           <div class="row" style="align-items:center; gap:8px;">
             <div style="position:relative;"><div class="circle c-rose" style="width:32px; height:32px;"></div><div class="green-dot"></div></div>
-            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Maya · 28</div><div class="tiny">8mi · online</div></div>
-            <span class="pill pill-active">Request</span>
+            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Maya · 28</div><div class="tiny">nearby · online · saved only</div></div>
+            <span class="pill pill-active" style="font-size:8px;">Request</span>
           </div>
           <div class="row" style="align-items:center; gap:8px;">
             <div class="circle c-sand" style="width:32px; height:32px;"></div>
-            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Tom · 31</div><div class="tiny">12mi · away</div></div>
-            <span class="pill">Saved</span>
+            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Tom · 31</div><div class="tiny">close · away · saved only</div></div>
+            <span class="pill" style="font-size:8px;">Request</span>
           </div>
           <div class="row" style="align-items:center; gap:8px;">
             <div style="position:relative;"><div class="circle c-sage" style="width:32px; height:32px;"></div><div class="green-dot"></div></div>
-            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Aoife · 26</div><div class="tiny">22mi · online</div></div>
-            <span class="pill">Saved</span>
+            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Aoife · 26</div><div class="tiny">further · online · saved only</div></div>
+            <span class="pill" style="font-size:8px;">Request</span>
+          </div>
+          <div class="divider"></div>
+          <div class="row" style="align-items:center; gap:8px;">
+            <div style="position:relative;"><div class="circle c-dusk" style="width:32px; height:32px;"></div><div class="green-dot"></div></div>
+            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Sam · 29</div><div class="tiny">close · online · connected</div></div>
+            <span class="pill pill-active" style="font-size:8px;">Chat</span>
           </div>
         </div>
         <div class="divider"></div>
-        <div class="tiny">Saving doesn't unlock chat.</div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5;">
+          <strong style="font-weight:600;">Green dot</strong> shows when saved people are online — but you can't message them until they accept a request. Only connected people unlock chat.
+        </div>
       </div>
-      <div class="screen-label"><span class="screen-num">24</span>Favourites</div>
+      <div class="screen-label"><span class="screen-num">24</span>Favourites · saved vs connected</div>
     </div>
 
-    <!-- 25 Request -->
+    <!-- 24a Request sent -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 14px;">
+          <div style="position:relative;">
+            <div class="circle c-rose" style="width:64px; height:64px;"></div>
+            <div style="position:absolute; bottom:-4px; right:-4px; width:24px; height:24px; border-radius:50%; background:#1a1a1a; color:white; display:flex; align-items:center; justify-content:center; font-size:12px; border:2px solid white;">✓</div>
+          </div>
+          <div style="text-align:center;">
+            <div class="h" style="font-size:13px;">Request sent to Maya</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">She'll see it next time she opens<br/>Lovehuddle. No pressure, no notification ping.</div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5; text-align:center; max-width:170px;">
+            If she accepts → text chat unlocks.<br/>If she ignores → you won't be told.
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center;">You can withdraw the request anytime.</div>
+        <div class="btn">Back to Ireland</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">24a</span>Request sent</div>
+    </div>
+
+    <!-- 25 Request received -->
     <div class="screen">
       <div class="screen-frame">
         <div class="status"><span>9:41</span><span>•••</span></div>
@@ -987,7 +1562,7 @@
           <div class="circle c-sand" style="width:54px; height:54px;"></div>
           <div style="text-align:center;">
             <div style="font-size:12px; font-weight:500;">Tom · 31</div>
-            <div class="tiny">Coffee · Music · 12mi</div>
+            <div class="tiny">Coffee · Music · close</div>
           </div>
           <div style="font-size:10px; font-style:italic; color:var(--ink-soft);">"Tom wants to connect."</div>
         </div>
@@ -999,7 +1574,7 @@
           <div class="btn btn-primary" style="flex:1;">Accept</div>
         </div>
       </div>
-      <div class="screen-label"><span class="screen-num">25</span>Request</div>
+      <div class="screen-label"><span class="screen-num">25</span>Request received</div>
     </div>
 
     <!-- 26 Chat -->
@@ -1179,6 +1754,274 @@
         <div class="tiny" style="text-align:center;">Silent redirect · no penalty</div>
       </div>
       <div class="screen-label"><span class="screen-num">31</span>Room locked redirect</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 7 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 7</div>
+    <div class="phase-title">Settings & payments</div>
+  </div>
+  <div class="grid">
+
+    <!-- 32 Settings hub -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Settings</div>
+          <div class="tiny" style="opacity:0;">·</div>
+        </div>
+        <div style="height:4px;"></div>
+        <div class="col">
+          <div class="row" style="align-items:center; gap:8px;">
+            <div class="circle c-rose" style="width:36px; height:36px;"></div>
+            <div style="flex:1;">
+              <div style="font-size:11px; font-weight:500;">Maya · 28</div>
+              <div class="tiny">Verified</div>
+            </div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="divider"></div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px;">Edit profile</div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px;">Notifications</div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px;">Safety tools</div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px;">Privacy policy</div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px;">Terms</div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px;">Community guidelines</div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="divider"></div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px;">Log out</div>
+            <div class="tiny">›</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:9px 10px;">
+            <div style="font-size:10px; color:#a04040;">Delete account</div>
+            <div class="tiny">›</div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">32</span>Settings hub</div>
+    </div>
+
+    <!-- 32a Logout -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Log out</div>
+          <div class="tiny" style="opacity:0;">·</div>
+        </div>
+        <div style="height:6px;"></div>
+        <div class="box-soft" style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:18px 14px;">
+          <div class="circle c-rose" style="width:48px; height:48px;"></div>
+          <div style="text-align:center;">
+            <div style="font-size:11px; font-weight:500;">Maya · 28</div>
+            <div class="tiny">Verified</div>
+          </div>
+        </div>
+        <div class="box" style="font-size:9px; line-height:1.5;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px;">What stays</div>
+          • Your profile, photos and connections<br/>
+          • Your favourites and Huddle history<br/>
+          • Your verification — you won't need to re-verify
+        </div>
+        <div class="tiny">You'll come back to the same Ireland next time you sign in.</div>
+        <div style="flex:1;"></div>
+        <div class="row">
+          <div class="btn" style="flex:1;">Cancel</div>
+          <div class="btn btn-primary" style="flex:1;">Log out</div>
+        </div>
+        <div class="tiny" style="text-align:center;">To remove everything instead → <span style="text-decoration:underline;">Delete account</span></div>
+      </div>
+      <div class="screen-label"><span class="screen-num">32a</span>Log out</div>
+    </div>
+
+    <!-- 33 Notifications -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Notifications</div>
+          <div class="tiny" style="opacity:0;">·</div>
+        </div>
+        <div class="sub">Calm by default · nothing pushy</div>
+        <div style="height:4px;"></div>
+        <div class="col">
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:10px; font-weight:500;">Connection requests</div>
+              <div class="tiny">When someone wants to connect</div>
+            </div>
+            <div style="width:30px; height:18px; border-radius:9px; background:#1a1a1a; position:relative;"><div style="position:absolute; right:2px; top:2px; width:14px; height:14px; border-radius:50%; background:white;"></div></div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:10px; font-weight:500;">Messages from connections</div>
+              <div class="tiny">Only from people you've connected with</div>
+            </div>
+            <div style="width:30px; height:18px; border-radius:9px; background:#1a1a1a; position:relative;"><div style="position:absolute; right:2px; top:2px; width:14px; height:14px; border-radius:50%; background:white;"></div></div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:10px; font-weight:500;">Huddle invitations</div>
+              <div class="tiny">Room icons sent to you</div>
+            </div>
+            <div style="width:30px; height:18px; border-radius:9px; background:#1a1a1a; position:relative;"><div style="position:absolute; right:2px; top:2px; width:14px; height:14px; border-radius:50%; background:white;"></div></div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:10px; font-weight:500;">Quiet hours</div>
+              <div class="tiny">22:00 – 08:00</div>
+            </div>
+            <div style="width:30px; height:18px; border-radius:9px; background:var(--line); position:relative;"><div style="position:absolute; left:2px; top:2px; width:14px; height:14px; border-radius:50%; background:white; box-shadow:0 1px 2px rgba(0,0,0,0.15);"></div></div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5;">No marketing pings. No "you might like…" prompts. No streaks.</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">33</span>Notifications</div>
+    </div>
+
+    <!-- 34 Delete account -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h" style="color:#a04040;">Delete account</div>
+          <div class="tiny" style="opacity:0;">·</div>
+        </div>
+        <div style="height:6px;"></div>
+        <div class="box" style="font-size:9px; line-height:1.5; border-color:#d8a8a8;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px; color:#a04040;">This removes everything</div>
+          • Your profile and photos<br/>
+          • Your live selfie reference<br/>
+          • Your favourites and connections<br/>
+          • Your Huddle history<br/>
+          • Your account is permanently closed
+        </div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5;">
+          We keep a small record of past safety reports for the protection of other people. Nothing identifying about you remains.
+        </div>
+        <div class="row" style="align-items:flex-start; gap:6px;">
+          <div style="width:14px; height:14px; border:1.5px solid var(--ink-faint); border-radius:3px; flex-shrink:0; margin-top:1px;"></div>
+          <div class="tiny" style="flex:1;">I understand this can't be undone.</div>
+        </div>
+        <div style="flex:1;"></div>
+        <div class="row">
+          <div class="btn" style="flex:1;">Cancel</div>
+          <div class="btn" style="flex:1; background:#a04040; color:white; border-color:transparent;">Delete</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">34</span>Delete account</div>
+    </div>
+
+    <!-- 35 Verification fee -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">One-time verification</div>
+        <div class="sub">Step 5 of 5</div>
+        <div style="height:6px;"></div>
+        <div class="box" style="font-size:9px; line-height:1.5;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px;">Why we charge a small fee</div>
+          A real cost — even a small one — keeps Lovehuddle free of bots, throwaway accounts, and bad actors. It's paid once, when you join.
+        </div>
+        <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:14px;">
+          <div>
+            <div style="font-size:11px; font-weight:500;">Verification fee</div>
+            <div class="tiny">One-time · non-refundable</div>
+          </div>
+          <span class="pill pill-active" style="font-size:10px; padding:4px 10px;">— —</span>
+        </div>
+        <div class="col">
+          <div class="row" style="align-items:center; gap:6px;">
+            <div style="width:14px; height:14px; border:1.5px solid var(--ink); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:7px; height:7px; border-radius:50%; background:var(--ink);"></div></div>
+            <div style="font-size:10px; flex:1;">Card</div>
+            <div class="tiny">●●●● 4242</div>
+          </div>
+          <div class="row" style="align-items:center; gap:6px;">
+            <div style="width:14px; height:14px; border:1.5px solid var(--line); border-radius:50%;"></div>
+            <div style="font-size:10px; flex:1;">Apple Pay / Google Pay</div>
+          </div>
+        </div>
+        <div class="tiny">Handled by our payment partner — we never store card details.</div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Pay & verify</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">35</span>Verification fee</div>
+    </div>
+
+    <!-- 36 Optional extras -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Optional extras</div>
+          <div class="tiny" style="opacity:0;">·</div>
+        </div>
+        <div class="sub">Expression only · never affects matching</div>
+        <div style="height:4px;"></div>
+        <div class="col">
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px;">
+            <div style="flex:1;">
+              <div style="font-size:11px; font-weight:500;">Glow Pass</div>
+              <div class="tiny">Soft glow around your tile · monthly</div>
+            </div>
+            <span class="pill" style="font-size:9px;">— —</span>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px;">
+            <div style="flex:1;">
+              <div style="font-size:11px; font-weight:500;">Voice Clip Pack</div>
+              <div class="tiny">Themed audio styles · monthly</div>
+            </div>
+            <span class="pill" style="font-size:9px;">— —</span>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px;">
+            <div style="flex:1;">
+              <div style="font-size:11px; font-weight:500;">Island Style Pack</div>
+              <div class="tiny">Customise your island presence</div>
+            </div>
+            <span class="pill" style="font-size:9px;">— —</span>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px; border:2px solid #1a1a1a;">
+            <div style="flex:1;">
+              <div style="font-size:11px; font-weight:500;">Ultimate Bundle</div>
+              <div class="tiny">All packs + monthly rare gift</div>
+            </div>
+            <span class="pill pill-active" style="font-size:9px;">— —</span>
+          </div>
+        </div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5;">
+          No paywalls on connection. No "see who liked you". No visibility boosts. Cosmetics never change who you see.
+        </div>
+        <div class="tiny">Cancel anytime in Settings.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">36</span>Optional extras</div>
     </div>
 
   </div>
