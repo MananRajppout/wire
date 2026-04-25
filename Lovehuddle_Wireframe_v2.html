@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lovehuddle — Wireframe</title>
+<style>
+  :root {
+    --bg: #F5F5F2;
+    --ink: #1a1a1a;
+    --ink-soft: #6b6b6b;
+    --ink-faint: #a0a0a0;
+    --line: rgba(0,0,0,0.12);
+    --line-soft: rgba(0,0,0,0.06);
+    --frame: #FFFFFF;
+    --screen-bg: #FAFAF8;
+
+    /* Lovehuddle theme tokens — per blueprint §3E.2 visual identity */
+    --lh-rose: #E8B4B8;          /* soft heart accent */
+    --lh-coffee-warm: #C9A88A;   /* coffee room warm brown */
+    --lh-coffee-deep: #8B6B47;
+    --lh-island-green: #B8D4B0;  /* Ireland island light */
+    --lh-island-water: #C8DEE0;
+    --lh-skipton: #2a2438;       /* main huddle dark plum */
+    --lh-skipton-glow: #4a3d5e;
+    --lh-glow-amber: #d4a574;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: 60px 40px;
+  }
+  .doc-header {
+    max-width: 1400px;
+    margin: 0 auto 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .doc-title { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+  .doc-meta { font-size: 12px; color: var(--ink-soft); }
+
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  .phase {
+    margin-bottom: 64px;
+  }
+  .phase-bar {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .phase-num {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+  }
+  .phase-title {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 32px 24px;
+  }
+
+  .screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .screen-frame {
+    background: var(--frame);
+    border: 1px solid var(--line-soft);
+    border-radius: 24px;
+    padding: 16px 12px;
+    width: 220px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  .screen-frame.dark {
+    background: radial-gradient(ellipse at top, #3a3148 0%, #1f1a2e 70%, #14101f 100%);
+    color: white;
+    border-color: transparent;
+  }
+  .screen-frame.island {
+    background:
+      radial-gradient(circle at 80% 20%, rgba(255,235,180,0.4) 0%, transparent 35%),
+      radial-gradient(circle at 20% 75%, rgba(184,212,176,0.5) 0%, transparent 40%),
+      linear-gradient(165deg, #EDF5E2 0%, #DCEEE5 50%, #C8DEE0 100%);
+  }
+  .screen-frame.warm {
+    background:
+      radial-gradient(circle at 70% 25%, rgba(255,220,180,0.5) 0%, transparent 40%),
+      linear-gradient(170deg, #F5E2C8 0%, #E8C9A0 60%, #D4A87A 100%);
+  }
+  .screen-frame.welcome {
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255,250,240,0.7) 0%, transparent 50%),
+      linear-gradient(180deg, #F5EDE0 0%, #E8DCC8 100%);
+  }
+
+  /* Ambient atmosphere — slow, calm, never flashing (§14 Visual identity) */
+  .ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(8px);
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .steam-wisp {
+    position: absolute;
+    width: 2px;
+    height: 14px;
+    background: linear-gradient(to top, transparent, rgba(255,255,255,0.5));
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .screen-label {
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  .screen-num {
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  /* Common phone-content elements */
+  .status {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    color: var(--ink-faint);
+  }
+  .dark .status { color: rgba(255,255,255,0.4); }
+  .warm .status { color: #7a5a2a; }
+
+  .h { font-size: 13px; font-weight: 600; }
+  .sub { font-size: 10px; color: var(--ink-soft); }
+  .dark .sub { color: rgba(255,255,255,0.6); }
+  .warm .sub { color: #7a5a2a; }
+  .tiny { font-size: 9px; color: var(--ink-faint); line-height: 1.5; }
+  .dark .tiny { color: rgba(255,255,255,0.5); }
+  .warm .tiny { color: #7a5a2a; }
+
+  .btn {
+    font-size: 10px;
+    padding: 9px 10px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid var(--line);
+    font-weight: 500;
+  }
+  .btn-primary {
+    background: #1a1a1a;
+    color: white;
+    border-color: transparent;
+  }
+  .dark .btn-primary { background: white; color: #1a1a1a; }
+  .btn-ghost { background: transparent; color: var(--ink-soft); border-color: transparent; }
+
+  .input {
+    font-size: 10px;
+    padding: 9px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    color: var(--ink-faint);
+    background: var(--screen-bg);
+  }
+
+  .pill {
+    display: inline-block;
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #ECECE8;
+    color: var(--ink-soft);
+  }
+  .pill-active { background: #1a1a1a; color: white; }
+  .pill-on-dark { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); }
+
+  .row { display: flex; gap: 6px; }
+  .col { display: flex; flex-direction: column; gap: 6px; }
+  .divider { height: 1px; background: var(--line-soft); margin: 2px 0; }
+  .dark .divider { background: rgba(255,255,255,0.1); }
+
+  .box {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px;
+  }
+  .box-dashed {
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    padding: 14px;
+    text-align: center;
+    background: var(--screen-bg);
+  }
+  .box-soft {
+    background: #ECECE8;
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  .circle {
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d8c4b0 0%, #c4a890 100%);
+    flex-shrink: 0;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.08), inset 0 1px 1px rgba(255,255,255,0.3);
+  }
+  .circle.c-rose { background: linear-gradient(135deg, #f0c4c0 0%, #d8a098 100%); }
+  .circle.c-sage { background: linear-gradient(135deg, #c4d4b8 0%, #98b48c 100%); }
+  .circle.c-sand { background: linear-gradient(135deg, #e8d4b0 0%, #c8a878 100%); }
+  .circle.c-dusk { background: linear-gradient(135deg, #c4b8d4 0%, #9888b0 100%); }
+  .circle.c-stone { background: linear-gradient(135deg, #d4d0c8 0%, #a8a098 100%); }
+  .dark .circle {
+    background: linear-gradient(135deg, rgba(255,220,200,0.5) 0%, rgba(180,140,160,0.6) 100%);
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.15);
+  }
+
+  /* Glow object — direct entry to Main Huddle (§1) */
+  .glow-object {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ffd89b 0%, #d4a574 50%, #a07840 100%);
+    box-shadow: 0 0 12px rgba(212,165,116,0.6), 0 0 4px rgba(255,216,155,0.8);
+    flex-shrink: 0;
+  }
+
+  .feet {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid var(--ink-faint);
+    margin: -2px auto 0;
+  }
+
+  .timer {
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .room-grid .box {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+  .room-grid .box.selected {
+    border: 1.5px solid #1a1a1a;
+    background: #ECECE8;
+  }
+
+  .floating-tile {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .floating-tile .name { font-size: 7px; font-weight: 500; margin-top: 2px; }
+  .floating-tile .meta { font-size: 6px; color: var(--ink-faint); }
+  .warm .floating-tile .name { color: #2a1a08; }
+  .warm .floating-tile .meta { color: #7a5a2a; }
+
+  .canvas {
+    flex: 1;
+    position: relative;
+  }
+
+  .video-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    padding: 4px 0;
+  }
+  .video-tile {
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-tile .name {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    font-size: 8px;
+  }
+
+  .gift-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  .gift-cell {
+    aspect-ratio: 1;
+    background: var(--screen-bg);
+    border: 1px solid var(--line-soft);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .speaker-halo {
+    box-shadow:
+      0 0 0 2px rgba(255,255,255,0.35),
+      0 0 0 5px rgba(255,255,255,0.15),
+      0 0 14px rgba(255,220,200,0.3);
+  }
+
+  .green-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #5a9a3a;
+    border: 1.5px solid white;
+  }
+
+  .chat-msg {
+    max-width: 75%;
+    padding: 6px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+  }
+  .chat-them { align-self: flex-start; background: #ECECE8; border-bottom-left-radius: 3px; }
+  .chat-me { align-self: flex-end; background: #1a1a1a; color: white; border-bottom-right-radius: 3px; }
+
+  .legend {
+    max-width: 1400px;
+    margin: 80px auto 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 32px;
+    font-size: 11px;
+    color: var(--ink-soft);
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-swatch { width: 24px; height: 24px; border-radius: 4px; border: 1px solid var(--line-soft); }
+
+  @media print {
+    body { padding: 20px; background: white; }
+    .phase { page-break-inside: avoid; }
+    .screen-frame { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div class="doc-title">Lovehuddle — Wireframe (v2 · blueprint-aligned)</div>
+  <div class="doc-meta">31 screens · 6 phases</div>
+</div>
+
+<div class="container">
+
+<!-- PHASE 1 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 1</div>
+    <div class="phase-title">Entry & verification</div>
+  </div>
+  <div class="grid">
+
+    <!-- 01 Splash -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+          <div style="width:54px; height:54px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #f5d0d4 0%, #e8b4b8 50%, #c48088 100%); box-shadow:0 4px 16px rgba(196,128,136,0.25), inset 0 -3px 6px rgba(0,0,0,0.08), inset 0 2px 3px rgba(255,255,255,0.4); display:flex; align-items:center; justify-content:center; font-size:20px; color:rgba(255,255,255,0.85);">♡</div>
+          <div style="text-align:center;">
+            <div class="h">Lovehuddle</div>
+            <div class="sub" style="margin-top:4px;">Calm, audio-first.</div>
+          </div>
+        </div>
+        <div class="btn btn-primary">Sign up</div>
+        <div class="btn btn-ghost">I have an account</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">01</span>Splash</div>
+    </div>
+
+    <!-- 02 Region block -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #f0d8da 0%, #d8b4b8 60%, #b89098 100%); opacity:0.6; display:flex; align-items:center; justify-content:center; font-size:14px; color:rgba(255,255,255,0.7);">♡</div>
+          <div style="text-align:center;">
+            <div class="sub" style="margin-top:6px;">Lovehuddle is not available in your region yet.</div>
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center;">UK only at launch · Ireland excluded</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">02</span>Region check</div>
+    </div>
+
+    <!-- 03 Sign up -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Create account</div>
+        <div class="sub">Step 1 of 5</div>
+        <div style="height:4px;"></div>
+        <div class="input">Email</div>
+        <div class="input">Password</div>
+        <div class="input">Confirm password</div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Continue</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">03</span>Sign up</div>
+    </div>
+
+    <!-- 04 ID verify -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Verify your ID</div>
+        <div class="sub">Step 2 of 5</div>
+        <div style="height:4px;"></div>
+        <div class="box-dashed">
+          <div class="circle" style="width:32px; height:32px; margin: 0 auto 8px;"></div>
+          <div style="font-size:10px; font-weight:500;">UK passport · driving licence</div>
+          <div class="tiny" style="margin-top:6px;">Handled by ID partner</div>
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Continue</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">04</span>ID verification</div>
+    </div>
+
+    <!-- 05 GDPR consent -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Before your selfie</div>
+        <div class="sub">Step 3 of 5</div>
+        <div style="height:4px;"></div>
+        <div class="box" style="font-size:9px; line-height:1.5;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px;">What we store</div>
+          Your live selfie is encrypted (AES-256) and used only to match your future profile photos. We never store your ID document or ID number — only a pass/fail result from our partner.
+        </div>
+        <div class="box" style="font-size:9px; line-height:1.5;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px;">Your rights</div>
+          You can delete your account at any time. Deletion removes your selfie and all linked data. Full details in Privacy Policy.
+        </div>
+        <div class="row" style="align-items:center; gap:6px;">
+          <div style="width:14px; height:14px; border:1.5px solid #1a1a1a; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:10px;">✓</div>
+          <div class="tiny" style="flex:1;">I understand and consent to selfie capture and storage.</div>
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Agree & continue</div>
+        <div class="btn btn-ghost">Privacy policy</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">05</span>GDPR consent</div>
+    </div>
+
+    <!-- 06 Selfie -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Live selfie</div>
+        <div class="sub">Step 4 of 5</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+          <div style="width:110px; height:150px; border:2px dashed rgba(255,255,255,0.3); border-radius:55px;"></div>
+        </div>
+        <div style="font-size:10px; text-align:center; color:rgba(255,255,255,0.7);">Blink slowly · turn head left</div>
+        <div class="btn btn-primary">Capture</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06</span>Live selfie</div>
+    </div>
+
+    <!-- 07 Verification failed (retry path) -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+          <div class="circle" style="width:42px; height:42px; background:#1a1a1a; color:white; display:flex; align-items:center; justify-content:center; font-size:18px;">!</div>
+          <div style="text-align:center;">
+            <div class="h">Couldn't verify</div>
+            <div class="sub" style="margin-top:6px;">Try again with better lighting, or use a different document.</div>
+          </div>
+          <div class="tiny" style="text-align:center;">No data has been stored.</div>
+        </div>
+        <div class="btn btn-primary">Try again</div>
+        <div class="btn btn-ghost">Get help</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">07</span>Verify failed · retry</div>
+    </div>
+
+    <!-- 08 Verified -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+          <div class="circle" style="width:42px; height:42px; background:#1a1a1a; color:white; display:flex; align-items:center; justify-content:center; font-size:18px;">✓</div>
+          <div style="text-align:center;">
+            <div class="h">You're verified</div>
+            <div class="sub" style="margin-top:6px;">State 3 unlocked</div>
+          </div>
+        </div>
+        <div class="btn btn-primary">Continue</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">08</span>Verified · State 3</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 2 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 2</div>
+    <div class="phase-title">Profile setup</div>
+  </div>
+  <div class="grid">
+
+    <!-- 09 Basics -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Your profile</div>
+        <div class="sub">Verified details locked</div>
+        <div style="height:4px;"></div>
+        <div class="row" style="align-items:center; gap:8px;">
+          <div class="circle c-rose" style="width:40px; height:40px;"></div>
+          <div style="flex:1;">
+            <div style="font-size:11px; font-weight:500;">Sarah · 29</div>
+            <div class="tiny">Verified · cannot be edited</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="align-items:baseline; justify-content:space-between;">
+          <div class="tiny" style="font-weight:500; color:var(--ink);">Profile photo</div>
+          <div class="tiny" style="color:#a8392a;">Required</div>
+        </div>
+        <div class="box-dashed" style="font-size:10px; color:var(--ink-faint); padding:18px;">+ Upload one photo<br><span style="font-size:8px;">Must match selfie · no filters</span></div>
+        <div class="row" style="align-items:baseline; justify-content:space-between;">
+          <div class="tiny" style="font-weight:500; color:var(--ink);">Short bio</div>
+          <div class="tiny">Optional</div>
+        </div>
+        <div class="input">Tell people one calm thing…</div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Next</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">09</span>Basics</div>
+    </div>
+
+    <!-- 10 Preferences -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Preferences</div>
+        <div class="sub">Used only for matching</div>
+        <div style="height:4px;"></div>
+        <div class="tiny">Sexual preference</div>
+        <div class="row" style="flex-wrap:wrap;">
+          <span class="pill pill-active">Straight</span>
+          <span class="pill">Gay</span>
+          <span class="pill">Lesbian</span>
+          <span class="pill">Everyone</span>
+        </div>
+        <div style="height:4px;"></div>
+        <div class="tiny">Distance range</div>
+        <div class="input">50 miles ▾</div>
+        <div class="tiny" style="font-size:8px;">20 · 50 · 100 · 150 · 200 · 300 · 400 · 500 · National</div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Next</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">10</span>Preferences</div>
+    </div>
+
+    <!-- 11 Pick rooms -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Pick two rooms</div>
+        <div class="sub">Mandatory · used for matching</div>
+        <div style="height:4px;"></div>
+        <div class="room-grid">
+          <div class="box selected">Pets ✓</div>
+          <div class="box selected">Coffee chat ✓</div>
+          <div class="box">Outdoors</div>
+          <div class="box">Travel</div>
+          <div class="box">Food & drink</div>
+          <div class="box">Memories</div>
+          <div class="box">Music</div>
+          <div class="box">Movies</div>
+          <div class="box">Hobbies</div>
+          <div class="box">Tech corner</div>
+          <div class="box" style="grid-column:1 / -1;">Book lovers</div>
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Enter Ireland</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">11</span>Pick 2 of 11 rooms</div>
+    </div>
+
+    <!-- 12 Welcome -->
+    <div class="screen">
+      <div class="screen-frame welcome">
+        <div class="ambient-orb" style="width:60px; height:60px; top:30px; right:-10px; background:rgba(255,220,180,0.6);"></div>
+        <div class="ambient-orb" style="width:80px; height:80px; bottom:60px; left:-20px; background:rgba(184,212,176,0.4);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Welcome to Ireland</div>
+        <div class="sub">A calm onboarding world</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="width:140px; height:140px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.8) 0%, rgba(232,220,200,0.5) 50%, rgba(184,168,140,0.3) 100%); box-shadow:0 8px 24px rgba(140,120,90,0.15), inset 0 -8px 12px rgba(255,255,255,0.4);"></div>
+          <div style="position:absolute; bottom:18px; width:80px; height:8px; border-radius:50%; background:radial-gradient(ellipse, rgba(0,0,0,0.08) 0%, transparent 70%);"></div>
+        </div>
+        <div class="btn btn-primary">Step inside</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">12</span>Welcome room</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 3 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 3</div>
+    <div class="phase-title">Ireland — the island</div>
+  </div>
+  <div class="grid">
+
+    <!-- 13 Ireland main -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="ambient-orb" style="width:70px; height:70px; bottom:80px; left:-15px; background:rgba(184,212,176,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Ireland</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub">14 rooms · drifting</div>
+        <div class="canvas">
+          <div class="floating-tile" style="top:8px; left:14px;"><div class="circle c-rose" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:34px; left:80px;"><div class="circle c-sand" style="width:32px; height:32px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:90px; left:30px;"><div class="circle c-sage" style="width:26px; height:26px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:78px; right:18px;"><div class="circle c-dusk" style="width:30px; height:30px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:32px; left:60px;"><div class="circle c-stone" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:14px; right:36px;"><div class="circle c-rose" style="width:26px; height:26px;"></div><div class="feet"></div></div>
+        </div>
+        <div class="row" style="margin-top:6px;">
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Rooms</div>
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Saved</div>
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Profile</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13</span>Ireland main</div>
+    </div>
+
+    <!-- 14 Rooms list -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Rooms</div>
+        <div class="sub">11 themed · always open</div>
+        <div style="height:2px;"></div>
+        <div class="col" style="overflow-y:auto;">
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Pets</div></div><span class="pill pill-active" style="font-size:8px;">yours</span></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Coffee chat</div></div><span class="pill pill-active" style="font-size:8px;">yours</span></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Outdoor activities</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Travel & adventure</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Food & drink</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Memories</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Music lovers</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Movies</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Hobbies</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Tech corner</div></div></div>
+          <div class="row" style="align-items:center; gap:6px;"><div class="circle" style="width:22px; height:22px;"></div><div style="flex:1;"><div style="font-size:9.5px; font-weight:500;">Book lovers</div></div></div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">14</span>Rooms list</div>
+    </div>
+
+    <!-- 15 Themed room -->
+    <div class="screen">
+      <div class="screen-frame warm">
+        <div class="ambient-orb" style="width:80px; height:80px; top:30px; right:-10px; background:rgba(212,168,122,0.45);"></div>
+        <div class="ambient-orb" style="width:60px; height:60px; bottom:100px; left:-10px; background:rgba(255,220,180,0.5);"></div>
+        <div class="steam-wisp" style="top:22px; left:32px; opacity:0.5;"></div>
+        <div class="steam-wisp" style="top:18px; left:38px; height:18px; opacity:0.4;"></div>
+        <div class="steam-wisp" style="top:24px; left:44px; height:10px; opacity:0.5;"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Coffee chat</div>
+          <div class="tiny">scroll →</div>
+        </div>
+        <div class="sub">Ambient · silent · tap a tile</div>
+        <div class="canvas" style="margin-top:6px;">
+          <div class="floating-tile" style="top:6px; left:8px;"><div class="circle c-rose" style="width:30px; height:30px;"></div><div class="feet"></div><div class="name">Maya · 28</div><div class="meta">8mi</div></div>
+          <div class="floating-tile" style="top:24px; right:14px;"><div class="circle c-sand" style="width:28px; height:28px;"></div><div class="feet"></div><div class="name">Tom · 31</div><div class="meta">12mi</div></div>
+          <div class="floating-tile" style="top:90px; left:50px;"><div class="circle c-sage" style="width:26px; height:26px;"></div><div class="feet"></div><div class="name">Aoife · 26</div><div class="meta">22mi</div></div>
+          <div class="floating-tile" style="bottom:34px; right:30px;"><div class="circle c-stone" style="width:28px; height:28px;"></div><div class="feet"></div><div class="name">Kev · 34</div><div class="meta">5mi</div></div>
+        </div>
+        <div class="box-soft" style="font-size:9px; display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.4);">
+          <div class="glow-object"></div>
+          <div style="flex:1; color:#5a4528;">Glow object → enter Main Huddle</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">15</span>Themed room (silent)</div>
+    </div>
+
+    <!-- 16 Mini profile -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="tiny">⚑ Report</div>
+        </div>
+        <div class="circle c-rose" style="width:80px; height:80px; margin:8px auto 4px;"></div>
+        <div style="text-align:center;">
+          <div class="h">Maya · 28</div>
+          <div class="sub">8 miles away</div>
+        </div>
+        <div class="row" style="justify-content:center;">
+          <span class="pill">Coffee chat</span>
+          <span class="pill">Pets</span>
+        </div>
+        <div class="box-soft" style="font-size:9px; font-style:italic;">"Quietly looking for someone who reads."</div>
+        <div class="tiny" style="text-align:center;">You see this person because you share a preference, distance, and one room.</div>
+        <div style="flex:1;"></div>
+        <div class="row">
+          <div class="btn" style="flex:1;">★ Save</div>
+          <div class="btn btn-primary" style="flex:1;">Request</div>
+        </div>
+        <div class="btn btn-ghost" style="font-size:9px;">⊘ Block</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">16</span>Mini profile</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 4 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 4</div>
+    <div class="phase-title">Main Huddle</div>
+  </div>
+  <div class="grid">
+
+    <!-- 17 Arrival -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="ambient-orb" style="width:120px; height:120px; top:60px; left:50%; transform:translateX(-50%); background:rgba(180,140,200,0.25); filter:blur(20px);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:10px;">← Leave</div>
+          <div style="font-size:11px; font-weight:500;">Skipton</div>
+          <div style="font-size:10px; opacity:0;">.</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; position:relative;">
+          <div style="display:flex; gap:6px;">
+            <div class="circle c-rose" style="width:20px; height:20px;"></div>
+            <div class="circle c-sand" style="width:20px; height:20px;"></div>
+            <div class="circle c-sage" style="width:20px; height:20px;"></div>
+            <div class="circle c-dusk" style="width:20px; height:20px;"></div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:9px; letter-spacing:0.16em; color:rgba(255,255,255,0.5); text-transform:uppercase;">arriving in</div>
+            <div class="timer">00:18</div>
+          </div>
+          <div class="tiny" style="text-align:center;">Arriving in your Huddle…<br/>Interaction begins when timer ends.</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">17</span>Arrival 30s</div>
+    </div>
+
+    <!-- 18 Waiting (fewer than 2 users completed countdown) -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="ambient-orb" style="width:120px; height:120px; top:80px; left:50%; transform:translateX(-50%); background:rgba(180,140,200,0.2); filter:blur(20px);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:10px;">← Leave</div>
+          <div style="font-size:11px; font-weight:500;">Skipton</div>
+          <div style="font-size:10px; opacity:0;">.</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+          <div style="display:flex; gap:6px;">
+            <div class="circle c-rose" style="width:20px; height:20px;"></div>
+            <div class="circle" style="width:20px; height:20px; opacity:0.25; background:rgba(255,255,255,0.1); box-shadow:none;"></div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:9px; letter-spacing:0.16em; color:rgba(255,255,255,0.5); text-transform:uppercase;">waiting</div>
+            <div style="font-size:13px; font-weight:500; margin-top:6px;">Waiting for someone to arrive…</div>
+          </div>
+          <div class="tiny" style="text-align:center;">A Huddle activates when 2 people complete arrival.</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">18</span>Waiting · pre-activate</div>
+    </div>
+
+    <!-- 19 Voice -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="ambient-orb" style="width:100px; height:100px; top:50px; left:50%; transform:translateX(-50%); background:rgba(180,140,200,0.22); filter:blur(20px);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:10px;">← Leave</div>
+          <div style="font-size:11px;">Voice · 06:42</div>
+          <div style="font-size:10px;">⛨</div>
+        </div>
+        <div class="canvas">
+          <div class="floating-tile" style="top:30px; left:50%; transform:translateX(-50%);"><div class="circle c-rose speaker-halo" style="width:36px; height:36px;"></div><div class="name" style="color:white;">Maya</div></div>
+          <div class="floating-tile" style="top:90px; left:18px;"><div class="circle c-sand" style="width:30px; height:30px;"></div><div class="name" style="color:white;">Tom</div></div>
+          <div class="floating-tile" style="top:90px; right:18px;"><div class="circle c-sage" style="width:30px; height:30px;"></div><div class="name" style="color:white;">Aoife</div></div>
+          <div class="floating-tile" style="bottom:60px; left:50%; transform:translateX(-50%);"><div class="circle c-dusk" style="width:30px; height:30px;"></div><div class="name" style="color:white;">Kev</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08); border-radius:6px; padding:6px 9px; font-size:9px; color:rgba(255,255,255,0.85);">
+          <div style="font-size:7px; letter-spacing:0.1em; opacity:0.6; text-transform:uppercase; margin-bottom:2px;">icebreaker · shown once</div>
+          What made you smile this week?
+        </div>
+        <div class="tiny" style="text-align:center;">You can leave anytime.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">19</span>Voice 8m</div>
+    </div>
+
+    <!-- 20 Video countdown -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="ambient-orb" style="width:100px; height:100px; top:60px; left:50%; transform:translateX(-50%); background:rgba(180,140,200,0.18); filter:blur(20px);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:10px;">← Leave</div>
+          <div style="font-size:11px;">Video in · 00:48</div>
+          <div style="font-size:10px;">⛨</div>
+        </div>
+        <div class="canvas">
+          <div class="floating-tile" style="top:30px; left:50%; transform:translateX(-50%);"><div class="circle c-rose" style="width:34px; height:34px;"></div><div class="name" style="color:white;">Maya</div></div>
+          <div class="floating-tile" style="top:90px; left:18px;"><div class="circle c-sand" style="width:28px; height:28px;"></div><div class="name" style="color:white;">Tom</div></div>
+          <div class="floating-tile" style="top:90px; right:18px;"><div class="circle c-sage" style="width:28px; height:28px;"></div><div class="name" style="color:white;">Aoife</div></div>
+          <div class="floating-tile" style="bottom:60px; left:50%; transform:translateX(-50%);"><div class="circle c-dusk" style="width:28px; height:28px;"></div><div class="name" style="color:white;">Kev</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08); border-radius:6px; padding:6px 9px; font-size:9px; color:rgba(255,255,255,0.85); text-align:center;">
+          Video is optional. You can stay audio-only.
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">20</span>Video countdown 1m</div>
+    </div>
+
+    <!-- 21 Video -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:10px;">← Leave</div>
+          <div style="font-size:11px;">Video · 01:24</div>
+          <div style="font-size:10px;">⛨</div>
+        </div>
+        <div class="video-grid">
+          <div class="video-tile" style="background:linear-gradient(160deg, rgba(240,196,192,0.4) 0%, rgba(216,160,152,0.3) 100%);"><div class="name">Maya</div></div>
+          <div class="video-tile" style="background:linear-gradient(160deg, rgba(232,212,176,0.4) 0%, rgba(200,168,120,0.3) 100%);"><div class="name">Tom</div></div>
+          <div class="video-tile"><div class="circle c-sage" style="width:28px; height:28px;"></div><div class="name">Aoife · audio</div></div>
+          <div class="video-tile"><div class="circle c-dusk" style="width:28px; height:28px;"></div><div class="name">Kev · audio</div></div>
+        </div>
+        <div class="tiny" style="text-align:center;">Turn video off any time.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">21</span>Video 2m</div>
+    </div>
+
+    <!-- 22 Connect / Not Now (private binary) -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="ambient-orb" style="width:140px; height:140px; top:80px; left:50%; transform:translateX(-50%); background:rgba(180,140,200,0.2); filter:blur(24px);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:0 10px; position:relative;">
+          <div class="timer">00:24</div>
+          <div style="text-align:center;">
+            <div style="font-size:12px; font-weight:500; line-height:1.4;">Would you like to stay connected with someone from this Huddle?</div>
+            <div class="tiny" style="margin-top:8px;">Your choice is private.</div>
+          </div>
+          <div class="col" style="width:100%; gap:8px;">
+            <div class="btn btn-primary" style="font-size:11px; padding:11px;">Connect</div>
+            <div class="btn" style="font-size:11px; padding:11px; background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.15); color:white;">Not now</div>
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center;">No one sees your choice.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">22</span>Connect / Not now 30s</div>
+    </div>
+
+    <!-- 23 Dissolve -->
+    <div class="screen">
+      <div class="screen-frame dark">
+        <div class="ambient-orb" style="width:160px; height:160px; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(180,140,200,0.18); filter:blur(28px);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; position:relative;">
+          <div style="width:60px; height:60px; border-radius:50%; background:radial-gradient(circle at 35% 35%, rgba(255,220,200,0.4) 0%, rgba(180,140,160,0.2) 60%, transparent 100%); filter:blur(2px);"></div>
+          <div style="text-align:center;">
+            <div style="font-size:12px; font-weight:500;">Your Huddle has ended.</div>
+            <div class="tiny" style="margin-top:6px;">Returning to Ireland…</div>
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center; opacity:0.5;">No after-chat · no room history</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">23</span>Dissolve → Ireland</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 5 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 5</div>
+    <div class="phase-title">Favourites & connections</div>
+  </div>
+  <div class="grid">
+
+    <!-- 24 Favourites -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Favourites</div>
+        <div class="sub">Private · they aren't notified</div>
+        <div style="height:4px;"></div>
+        <div class="col">
+          <div class="row" style="align-items:center; gap:8px;">
+            <div style="position:relative;"><div class="circle c-rose" style="width:32px; height:32px;"></div><div class="green-dot"></div></div>
+            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Maya · 28</div><div class="tiny">8mi · online</div></div>
+            <span class="pill pill-active">Request</span>
+          </div>
+          <div class="row" style="align-items:center; gap:8px;">
+            <div class="circle c-sand" style="width:32px; height:32px;"></div>
+            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Tom · 31</div><div class="tiny">12mi · away</div></div>
+            <span class="pill">Saved</span>
+          </div>
+          <div class="row" style="align-items:center; gap:8px;">
+            <div style="position:relative;"><div class="circle c-sage" style="width:32px; height:32px;"></div><div class="green-dot"></div></div>
+            <div style="flex:1;"><div style="font-size:11px; font-weight:500;">Aoife · 26</div><div class="tiny">22mi · online</div></div>
+            <span class="pill">Saved</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="tiny">Saving doesn't unlock chat.</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">24</span>Favourites</div>
+    </div>
+
+    <!-- 25 Request -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Connection request</div>
+        <div style="height:6px;"></div>
+        <div class="box-soft" style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px;">
+          <div class="circle c-sand" style="width:54px; height:54px;"></div>
+          <div style="text-align:center;">
+            <div style="font-size:12px; font-weight:500;">Tom · 31</div>
+            <div class="tiny">Coffee · Music · 12mi</div>
+          </div>
+          <div style="font-size:10px; font-style:italic; color:var(--ink-soft);">"Tom wants to connect."</div>
+        </div>
+        <div style="height:4px;"></div>
+        <div class="tiny">Unlocks text, emoji, flowers, green dot. Not voice, images, video.</div>
+        <div style="flex:1;"></div>
+        <div class="row">
+          <div class="btn" style="flex:1;">Ignore</div>
+          <div class="btn btn-primary" style="flex:1;">Accept</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">25</span>Request</div>
+    </div>
+
+    <!-- 26 Chat -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="row" style="align-items:center; gap:6px;">
+          <div class="tiny">←</div>
+          <div style="position:relative;"><div class="circle c-sand" style="width:24px; height:24px;"></div><div class="green-dot" style="width:7px; height:7px;"></div></div>
+          <div style="flex:1;"><div style="font-size:10px; font-weight:500;">Tom · 31</div><div class="tiny">online</div></div>
+          <div class="tiny">⋯</div>
+        </div>
+        <div class="divider"></div>
+        <div class="col" style="flex:1;">
+          <div class="chat-msg chat-them">Hey, that was a lovely huddle.</div>
+          <div class="chat-msg chat-me">Agreed — your story made me laugh.</div>
+          <div class="chat-msg chat-them" style="font-size:14px;">🌸</div>
+          <div class="chat-msg chat-me">Coffee sometime?</div>
+        </div>
+        <div class="row" style="align-items:center; gap:6px;">
+          <div class="circle" style="width:22px; height:22px;"></div>
+          <div class="input" style="flex:1;">Type…</div>
+          <div class="circle" style="width:22px; height:22px; background:#1a1a1a;"></div>
+        </div>
+        <div class="tiny" style="text-align:center;">No images · no audio · no links</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">26</span>Connected chat</div>
+    </div>
+
+    <!-- 27 Video upgrade -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Private video room</div>
+        <div class="sub">Optional · only if both want</div>
+        <div style="height:4px;"></div>
+        <div class="col">
+          <div class="box" style="display:flex; align-items:center; gap:8px;">
+            <div style="flex:1;"><div style="font-size:10px; font-weight:500;">1 hour</div><div class="tiny">Single session</div></div>
+            <span class="pill">£ tbd</span>
+          </div>
+          <div class="box" style="display:flex; align-items:center; gap:8px; border:2px solid #1a1a1a;">
+            <div style="flex:1;"><div style="font-size:10px; font-weight:500;">24 hours</div><div class="tiny">Most chosen</div></div>
+            <span class="pill pill-active">£ tbd</span>
+          </div>
+          <div class="box" style="display:flex; align-items:center; gap:8px;">
+            <div style="flex:1;"><div style="font-size:10px; font-weight:500;">Weekend</div><div class="tiny">Fri → Sun</div></div>
+            <span class="pill">£ tbd</span>
+          </div>
+        </div>
+        <div class="tiny" style="margin-top:6px;">Either can end any time. Pricing tbc — see Section 9.7.</div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Unlock video</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">27</span>Video upgrade</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 6 -->
+<section class="phase">
+  <div class="phase-bar">
+    <div class="phase-num">PHASE 6</div>
+    <div class="phase-title">Economy, safety & system states</div>
+  </div>
+  <div class="grid">
+
+    <!-- 28 Gifts & audio sends -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Send something soft</div>
+        <div class="sub">Expression only · never affects matching</div>
+        <div style="height:4px;"></div>
+        <div class="box-soft" style="display:flex; align-items:center; gap:8px; padding:8px;">
+          <div style="flex:1;">
+            <div style="font-size:10px; font-weight:500;">Audio sends</div>
+            <div class="tiny">1 free · then paid</div>
+          </div>
+          <span class="pill pill-active">1 left</span>
+        </div>
+        <div class="tiny" style="margin-top:2px;">Listening is always free, unlimited.</div>
+        <div class="divider"></div>
+        <div class="tiny">Common gifts</div>
+        <div class="gift-grid">
+          <div class="gift-cell">🌹</div><div class="gift-cell">🌷</div><div class="gift-cell">♡</div><div class="gift-cell">🕯</div>
+        </div>
+        <div class="tiny" style="margin-top:4px;">Seasonal · Rare</div>
+        <div class="gift-grid">
+          <div class="gift-cell">🍁</div><div class="gift-cell">❄</div><div class="gift-cell">✦</div><div class="gift-cell">◈</div>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="align-items:center; justify-content:space-between;">
+          <div style="font-size:10px; font-weight:500;">Glow pass · monthly</div>
+          <span class="pill pill-active">£ tbd</span>
+        </div>
+        <div class="tiny">2 common/day · 3 rare/day · use or lose</div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Send a flower</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">28</span>Gifts & audio</div>
+    </div>
+
+    <!-- 29 Safety -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Safety</div>
+        <div class="sub">Always one tap away</div>
+        <div style="height:4px;"></div>
+        <div class="col">
+          <div class="box">
+            <div style="font-size:11px; font-weight:500;">⊘ Block</div>
+            <div class="tiny" style="margin-top:3px;">Personal only. Hides them from you.</div>
+          </div>
+          <div class="box">
+            <div style="font-size:11px; font-weight:500;">⚑ Report</div>
+            <div class="tiny" style="margin-top:3px;">Sent to moderation. They aren't notified.</div>
+            <div style="display:flex; flex-wrap:wrap; gap:3px; margin-top:6px;">
+              <span class="pill" style="font-size:8px;">Harassment</span>
+              <span class="pill" style="font-size:8px;">Fake profile</span>
+              <span class="pill" style="font-size:8px;">Inappropriate</span>
+              <span class="pill" style="font-size:8px;">Scam</span>
+              <span class="pill" style="font-size:8px;">Age</span>
+              <span class="pill" style="font-size:8px;">Off-platform</span>
+            </div>
+          </div>
+          <div class="box-soft" style="font-size:9px;">AI monitors every room for safety only. Never used for matching, ranking, or engagement.</div>
+        </div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-ghost">Cancel</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">29</span>Safety sheet</div>
+    </div>
+
+    <!-- 30 Block confirm -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div class="h">Block this person?</div>
+        <div style="height:6px;"></div>
+        <div class="box-soft" style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px;">
+          <div class="circle c-sand" style="width:48px; height:48px;"></div>
+          <div style="font-size:11px; font-weight:500;">Tom · 31</div>
+        </div>
+        <div class="box" style="font-size:9px; line-height:1.5;">
+          <div style="font-weight:500; font-size:10px; margin-bottom:4px;">What happens</div>
+          • You won't see each other again<br/>
+          • No audio · no gifts · no re-contact<br/>
+          • Identity-locked (can't bypass with new account)<br/>
+          • They aren't notified
+        </div>
+        <div class="tiny">Personal only — they aren't reported or removed from Lovehuddle.</div>
+        <div style="flex:1;"></div>
+        <div class="row">
+          <div class="btn" style="flex:1;">Cancel</div>
+          <div class="btn btn-primary" style="flex:1;">Block</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">30</span>Block confirm</div>
+    </div>
+
+    <!-- 31 Room locked redirect -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="ambient-orb" style="width:70px; height:70px; bottom:80px; left:-15px; background:rgba(184,212,176,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 12px; position:relative;">
+          <div style="width:50px; height:50px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.7) 0%, rgba(232,220,200,0.4) 60%, rgba(184,168,140,0.2) 100%); box-shadow:0 4px 14px rgba(140,120,90,0.12), inset 0 -3px 6px rgba(255,255,255,0.3);"></div>
+          <div style="text-align:center;">
+            <div class="h">Finding you another room…</div>
+            <div class="sub" style="margin-top:6px;">That Huddle has just started.</div>
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center;">Silent redirect · no penalty</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">31</span>Room locked redirect</div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+</body>
+</html>
