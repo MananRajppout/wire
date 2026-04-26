@@ -385,7 +385,7 @@
 
 <div class="doc-header">
   <div class="doc-title">Lovehuddle — Wireframe (v6 · complete handover)</div>
-  <div class="doc-meta">55 screens · 8 phases</div>
+  <div class="doc-meta">66 screens · 8 phases</div>
 </div>
 
 <div class="container">
@@ -790,6 +790,45 @@
       <div class="screen-label"><span class="screen-num">06f</span>Movement — result</div>
     </div>
 
+    <!-- 06g Photo check — processing -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 14px;">
+          <div style="display:flex; gap:5px;">
+            <div style="width:8px; height:8px; border-radius:50%; background:var(--ink); opacity:0.4;"></div>
+            <div style="width:8px; height:8px; border-radius:50%; background:var(--ink); opacity:0.65;"></div>
+            <div style="width:8px; height:8px; border-radius:50%; background:var(--ink); opacity:0.9;"></div>
+          </div>
+          <div style="text-align:center;">
+            <div class="h" style="font-size:13px;">Checking your photo…</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">Matching this photo to your live selfie.<br/>Usually 3–5 seconds.</div>
+          </div>
+          <div class="tiny" style="opacity:0.6;">Please don't close the app.</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06g</span>Photo check — processing</div>
+    </div>
+
+    <!-- 06h Photo check — rejected -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 14px;">
+          <div style="width:54px; height:54px; border-radius:50%; background:#FFEEEE; display:flex; align-items:center; justify-content:center; font-size:22px; color:#C44;">✕</div>
+          <div style="text-align:center;">
+            <div class="h">Photo doesn't match</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">This photo doesn't match your live selfie.<br/>Try a clearer photo of your face.</div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5; text-align:center; max-width:170px;">
+            No filters · no AI edits · no group photos.
+          </div>
+        </div>
+        <div class="btn btn-primary">Try again</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">06h</span>Photo check — rejected</div>
+    </div>
+
     <!-- 07 Verification failed (retry path) -->
     <div class="screen">
       <div class="screen-frame">
@@ -1063,6 +1102,159 @@
         </div>
       </div>
       <div class="screen-label"><span class="screen-num">13b</span>Island — populated</div>
+    </div>
+
+    <!-- 13f Island — environment with billboard -->
+    <div class="screen">
+      <div class="screen-frame island" style="position:relative;">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="ambient-orb" style="width:70px; height:70px; bottom:90px; left:-15px; background:rgba(184,212,176,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Island</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub">14 rooms · drifting · day cycle</div>
+        <!-- Billboard frame -->
+        <div style="margin-top:6px; background:linear-gradient(135deg,#dce6c4 0%,#c4d4b8 100%); border:1px solid rgba(120,140,100,0.3); border-radius:10px; padding:14px 12px; min-height:64px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; position:relative; box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);">
+          <div style="font-size:8px; opacity:0.55; letter-spacing:0.08em; text-transform:uppercase;">Partner</div>
+          <div style="font-size:11px; font-weight:500; color:#3d4a2e;">Wide open coastlines</div>
+          <div style="font-size:9px; opacity:0.6; font-style:italic;">— travel campaign</div>
+        </div>
+        <div class="canvas" style="margin-top:4px; min-height:80px;">
+          <div class="floating-tile" style="top:6px; left:14px;"><div class="circle c-rose" style="width:24px; height:24px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:18px; right:30px;"><div class="circle c-sand" style="width:26px; height:26px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:8px; left:50%; transform:translateX(-50%);"><div class="circle c-stone" style="width:22px; height:22px;"></div><div class="feet"></div></div>
+        </div>
+        <div class="tiny" style="text-align:center;">Billboard: ambient · non-interactive · never affects matching</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13f</span>Island — billboard</div>
+    </div>
+
+    <!-- 13g Billboard — rotation -->
+    <div class="screen">
+      <div class="screen-frame island" style="position:relative;">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Island</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub">Billboard · rotating</div>
+        <!-- Two billboards stacked to show fade transition -->
+        <div style="position:relative; margin-top:6px; min-height:80px;">
+          <div style="position:absolute; inset:0; background:linear-gradient(135deg,#e0d2c0 0%,#c8b89a 100%); border:1px solid rgba(120,100,80,0.3); border-radius:10px; padding:14px 12px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; opacity:0.45;">
+            <div style="font-size:8px; opacity:0.55; letter-spacing:0.08em; text-transform:uppercase;">Previous</div>
+            <div style="font-size:10px; font-weight:500; color:#5a4528;">Quiet mountain mornings</div>
+          </div>
+          <div style="position:absolute; inset:0; background:linear-gradient(135deg,#dce6c4 0%,#c4d4b8 100%); border:1px solid rgba(120,140,100,0.3); border-radius:10px; padding:14px 12px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px;">
+            <div style="font-size:8px; opacity:0.55; letter-spacing:0.08em; text-transform:uppercase;">Now</div>
+            <div style="font-size:11px; font-weight:500; color:#3d4a2e;">Wellbeing · breathe</div>
+          </div>
+        </div>
+        <div style="height:60px;"></div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5;">
+          Rotates every few minutes · soft fade transition · no flashing · no sound · no calls to action · all artwork pre-approved for calm tone
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13g</span>Billboard — rotation</div>
+    </div>
+
+    <!-- 13h Billboard — seasonal themes -->
+    <div class="screen">
+      <div class="screen-frame island" style="position:relative;">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Island</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub">Billboard · seasonal</div>
+        <div class="row" style="gap:4px; margin-top:6px;">
+          <div style="flex:1; background:linear-gradient(180deg,#fff4f4 0%,#f8d8e0 100%); border-radius:6px; padding:8px 4px; text-align:center; min-height:60px;">
+            <div style="font-size:14px;">🌸</div>
+            <div class="tiny" style="margin-top:2px; font-weight:500; font-size:8px;">Spring</div>
+            <div class="tiny" style="opacity:0.6; font-size:7px;">Blossoms</div>
+          </div>
+          <div style="flex:1; background:linear-gradient(180deg,#fff8d8 0%,#f4c478 100%); border-radius:6px; padding:8px 4px; text-align:center; min-height:60px;">
+            <div style="font-size:14px;">☀️</div>
+            <div class="tiny" style="margin-top:2px; font-weight:500; font-size:8px;">Summer</div>
+            <div class="tiny" style="opacity:0.6; font-size:7px;">Warm glow</div>
+          </div>
+          <div style="flex:1; background:linear-gradient(180deg,#f8e0c0 0%,#c89060 100%); border-radius:6px; padding:8px 4px; text-align:center; min-height:60px;">
+            <div style="font-size:14px;">🍁</div>
+            <div class="tiny" style="margin-top:2px; font-weight:500; font-size:8px;">Autumn</div>
+            <div class="tiny" style="opacity:0.6; font-size:7px;">Falling leaves</div>
+          </div>
+          <div style="flex:1; background:linear-gradient(180deg,#f0f4f8 0%,#c8d4e0 100%); border-radius:6px; padding:8px 4px; text-align:center; min-height:60px;">
+            <div style="font-size:14px;">❄️</div>
+            <div class="tiny" style="margin-top:2px; font-weight:500; font-size:8px;">Winter</div>
+            <div class="tiny" style="opacity:0.6; font-size:7px;">Soft snow</div>
+          </div>
+        </div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5; margin-top:6px;">
+          Seasonal artwork temporarily replaces partner content · still calm · still non-interactive
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13h</span>Billboard — seasonal</div>
+    </div>
+
+    <!-- 13i Island — user tiles around billboard -->
+    <div class="screen">
+      <div class="screen-frame island" style="position:relative;">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Island</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub">Tiles drift around the billboard</div>
+        <div style="position:relative; margin-top:6px; min-height:170px;">
+          <!-- Billboard centred -->
+          <div style="position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:120px; min-height:54px; background:linear-gradient(135deg,#dce6c4 0%,#c4d4b8 100%); border:1px solid rgba(120,140,100,0.3); border-radius:8px; padding:10px 8px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);">
+            <div style="font-size:7px; opacity:0.55; letter-spacing:0.08em; text-transform:uppercase;">Partner</div>
+            <div style="font-size:9px; font-weight:500; color:#3d4a2e;">Calm coastlines</div>
+          </div>
+          <!-- User tiles drifting around — never overlapping -->
+          <div class="floating-tile" style="top:6px; left:6px;"><div class="circle c-rose" style="width:22px; height:22px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:6px; right:6px;"><div class="circle c-sand" style="width:22px; height:22px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:6px; left:8px;"><div class="circle c-sage" style="width:22px; height:22px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:6px; right:14px;"><div class="circle c-dusk" style="width:22px; height:22px;"></div><div class="feet"></div></div>
+        </div>
+        <div class="tiny" style="text-align:center;">Tiles never overlap the billboard · billboard stays in the background</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13i</span>Island — tiles & billboard</div>
+    </div>
+
+    <!-- 13j Island — Christmas theme -->
+    <div class="screen">
+      <div class="screen-frame island" style="position:relative; background:linear-gradient(180deg, #1a2438 0%, #2d3850 60%, #4a5878 100%);">
+        <!-- soft snowflakes -->
+        <div style="position:absolute; top:30px; left:30px; font-size:8px; color:rgba(255,255,255,0.6);">❄</div>
+        <div style="position:absolute; top:80px; right:40px; font-size:6px; color:rgba(255,255,255,0.5);">❄</div>
+        <div style="position:absolute; top:140px; left:60px; font-size:7px; color:rgba(255,255,255,0.5);">❄</div>
+        <div style="position:absolute; bottom:120px; right:25px; font-size:8px; color:rgba(255,255,255,0.6);">❄</div>
+        <div style="position:absolute; bottom:60px; left:35px; font-size:6px; color:rgba(255,255,255,0.4);">❄</div>
+        <div class="ambient-orb" style="width:80px; height:80px; top:0; right:-15px; background:rgba(255,200,160,0.25);"></div>
+        <div class="status" style="color:white;"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h" style="color:white;">Island</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub" style="color:rgba(255,255,255,0.7);">Christmas · soft lights · gentle snow</div>
+        <!-- Seasonal billboard -->
+        <div style="margin-top:6px; background:linear-gradient(135deg,#3a2840 0%,#5a4060 100%); border:1px solid rgba(220,180,200,0.3); border-radius:10px; padding:12px; min-height:54px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:3px;">
+          <div style="font-size:8px; opacity:0.7; letter-spacing:0.08em; text-transform:uppercase; color:#f4d4b8;">Seasonal</div>
+          <div style="font-size:11px; font-weight:500; color:#fff8e8;">A quieter Christmas</div>
+        </div>
+        <div class="canvas" style="margin-top:4px; min-height:80px;">
+          <div class="floating-tile" style="top:8px; left:14px;"><div class="circle c-rose" style="width:22px; height:22px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:24px; right:30px;"><div class="circle c-sand" style="width:24px; height:24px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:8px; left:50%; transform:translateX(-50%);"><div class="circle c-stone" style="width:20px; height:20px;"></div><div class="feet"></div></div>
+        </div>
+        <div class="tiny" style="text-align:center; color:rgba(255,255,255,0.7);">Calm · ambient · non-interactive</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13j</span>Island — Christmas</div>
     </div>
 
     <!-- 13c Edit profile -->
@@ -1461,6 +1653,74 @@
         <div class="tiny" style="text-align:center;">No one sees your choice.</div>
       </div>
       <div class="screen-label"><span class="screen-num">22</span>Connect / Not now 30s</div>
+    </div>
+
+    <!-- 22a AI-ended Huddle (safety) -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 12px;">
+          <div style="width:50px; height:50px; border-radius:50%; background:#FFE9E0; display:flex; align-items:center; justify-content:center; font-size:20px; color:#C44;">⛨</div>
+          <div style="text-align:center;">
+            <div class="h">Huddle ended</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">This Huddle has been ended<br/>for safety reasons.</div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5; text-align:center; max-width:170px;">
+            You're being returned to the Island. No after-chat · no history.
+          </div>
+        </div>
+        <div class="btn btn-primary">Back to Island</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">22a</span>AI-ended Huddle</div>
+    </div>
+
+    <!-- 22b AI-restricted user banner -->
+    <div class="screen">
+      <div class="screen-frame island" style="position:relative;">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Island</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <div class="sub">6 nearby · rotating slowly</div>
+        <!-- Subtle restriction banner at top -->
+        <div style="background:#FFF8F0; border:1px solid #E8C97A; border-radius:8px; padding:8px 10px; display:flex; align-items:center; gap:8px;">
+          <div style="font-size:14px;">ℹ</div>
+          <div style="flex:1;">
+            <div style="font-size:9px; font-weight:500; color:#5C4612;">Some features are temporarily limited</div>
+            <div class="tiny" style="color:#8B6B1F;">For safety review · doesn't affect who you see or your visibility</div>
+          </div>
+        </div>
+        <div class="canvas" style="margin-top:4px;">
+          <div class="floating-tile" style="top:8px; left:14px;"><div class="circle c-rose" style="width:26px; height:26px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:24px; right:18px;"><div class="circle c-sand" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:14px; left:50%; transform:translateX(-50%);"><div class="circle c-stone" style="width:24px; height:24px;"></div><div class="feet"></div></div>
+        </div>
+        <div class="tiny" style="text-align:center;">Banner is non-blocking · subtle</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">22b</span>AI-restricted banner</div>
+    </div>
+
+    <!-- 22c Huddle — other person left early -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 12px;">
+          <div style="width:50px; height:50px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.7) 0%, rgba(232,220,200,0.4) 60%, rgba(184,168,140,0.2) 100%); box-shadow:0 4px 14px rgba(140,120,90,0.12);"></div>
+          <div style="text-align:center;">
+            <div class="h">The other person has left</div>
+            <div class="sub" style="margin-top:6px; line-height:1.5;">You're being returned to the Island.</div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5; text-align:center; max-width:170px;">
+            No penalty · no notification sent.
+          </div>
+        </div>
+        <div class="btn btn-primary">Back to Island</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">22c</span>Other person left</div>
     </div>
 
     <!-- 23 Dissolve -->
