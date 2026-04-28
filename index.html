@@ -1981,7 +1981,7 @@
           <div style="font-size:10px; font-style:italic; color:var(--ink-soft);">"Tom wants to connect."</div>
         </div>
         <div style="height:4px;"></div>
-        <div class="tiny">Unlocks text, emoji, flowers, green dot. Not voice, images, video.</div>
+        <div class="tiny">Unlocks text, emoji, flowers, green dot. Voice & images not included. Huddle Video available separately (monthly).</div>
         <div style="flex:1;"></div>
         <div class="row">
           <div class="btn" style="flex:1;">Ignore</div>
@@ -1999,7 +1999,8 @@
           <div class="tiny">←</div>
           <div style="position:relative;"><div class="circle c-sand" style="width:24px; height:24px;"></div><div class="green-dot" style="width:7px; height:7px;"></div></div>
           <div style="flex:1;"><div style="font-size:10px; font-weight:500;">Tom · 31</div><div class="tiny">online</div></div>
-          <div class="tiny">⋯</div>
+          <!-- Huddle Video button in header -->
+          <div style="font-size:8px; padding:4px 8px; border-radius:999px; background:#1a1a1a; color:white; font-weight:500; cursor:pointer;">📹 Video</div>
         </div>
         <div class="divider"></div>
         <div class="col" style="flex:1;">
@@ -2014,37 +2015,133 @@
           <div class="circle" style="width:22px; height:22px; background:#1a1a1a;"></div>
         </div>
         <div class="tiny" style="text-align:center;">No images · no audio · no links</div>
+        <div class="tiny" style="text-align:center; color:#5a5a5a; font-size:8px;">📹 Video → Huddle Video (connection only · monthly)</div>
       </div>
       <div class="screen-label"><span class="screen-num">26</span>Connected chat</div>
     </div>
 
-    <!-- 27 Video upgrade -->
+    <!-- 27 Huddle Video — purchase (connection-only, monthly) -->
     <div class="screen">
       <div class="screen-frame">
         <div class="status"><span>9:41</span><span>•••</span></div>
-        <div class="h">Private video room</div>
-        <div class="sub">Optional · only if both want</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Huddle Video</div>
+          <div style="width:18px; height:18px; border-radius:50%; border:1.5px solid var(--ink-faint); display:flex; align-items:center; justify-content:center; font-size:9px; color:var(--ink-faint); cursor:pointer;">i</div>
+        </div>
         <div style="height:4px;"></div>
-        <div class="col">
-          <div class="box" style="display:flex; align-items:center; gap:8px;">
-            <div style="flex:1;"><div style="font-size:10px; font-weight:500;">1 hour</div><div class="tiny">Single session</div></div>
-            <span class="pill">£ tbd</span>
+        <!-- Safety purpose statement -->
+        <div class="box-soft" style="font-size:9px; line-height:1.6; border-left:3px solid #c4a8c0;">
+          Safety first. Before giving out your phone number or WhatsApp, use Huddle Video to talk privately and securely inside LoveHuddle. Unlimited 1‑to‑1 video for 30 days. No pressure — just get to know someone safely first.
+        </div>
+        <div style="height:6px;"></div>
+        <!-- Single product only -->
+        <div class="box" style="display:flex; align-items:center; gap:8px; border:2px solid #1a1a1a; padding:14px 12px;">
+          <div style="flex:1;">
+            <div style="font-size:12px; font-weight:600;">Huddle Video — Monthly</div>
+            <div class="tiny" style="margin-top:2px;">Unlimited 1‑to‑1 video · 30 days</div>
+            <div class="tiny" style="margin-top:2px; color:#5a5a5a;">Available only after you connect with someone</div>
           </div>
-          <div class="box" style="display:flex; align-items:center; gap:8px; border:2px solid #1a1a1a;">
-            <div style="flex:1;"><div style="font-size:10px; font-weight:500;">24 hours</div><div class="tiny">Most chosen</div></div>
-            <span class="pill pill-active">£ tbd</span>
-          </div>
-          <div class="box" style="display:flex; align-items:center; gap:8px;">
-            <div style="flex:1;"><div style="font-size:10px; font-weight:500;">Weekend</div><div class="tiny">Fri → Sun</div></div>
-            <span class="pill">£ tbd</span>
+          <span class="pill pill-active" style="font-size:11px; padding:5px 10px;">£6.99</span>
+        </div>
+        <div class="tiny" style="margin-top:6px; text-align:center; line-height:1.5;">1‑to‑1 only · not for rooms or groups<br/>Powered by a secure embedded provider</div>
+        <div style="flex:1;"></div>
+        <div class="btn btn-primary">Start Huddle Video — £6.99/month</div>
+        <div class="tiny" style="text-align:center;">Cancel anytime in Settings · handled by our payment partner</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">27</span>Huddle Video — purchase</div>
+    </div>
+
+    <!-- 27a Huddle Video — active pass status -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="tiny">← back</div>
+          <div class="h">Huddle Video</div>
+          <div class="tiny" style="opacity:0;">·</div>
+        </div>
+        <div style="height:4px;"></div>
+        <div class="box" style="display:flex; align-items:center; gap:10px; border-color:#70a070;">
+          <div style="width:10px; height:10px; border-radius:50%; background:#5a9a3a; flex-shrink:0;"></div>
+          <div style="flex:1;">
+            <div style="font-size:11px; font-weight:600; color:#2a5a2a;">Active</div>
+            <div class="tiny">Expires 28 May 2026 · 30 days</div>
           </div>
         </div>
-        <div class="tiny" style="margin-top:6px;">Either can end any time. Pricing tbc — see Section 9.7.</div>
+        <div class="box-soft" style="font-size:9px; line-height:1.5; margin-top:6px;">
+          Your Huddle Video is active. You can start a private 1‑to‑1 video call with any of your connections at any time.
+        </div>
+        <div style="height:6px;"></div>
+        <div class="box" style="font-size:9px; line-height:1.6;">
+          <div style="font-weight:600; margin-bottom:4px;">How it works</div>
+          1. Open a connection's chat<br/>
+          2. Tap "Start Video Call"<br/>
+          3. Video opens inside LoveHuddle<br/>
+          4. No logins, no passwords, no app‑switching
+        </div>
         <div style="flex:1;"></div>
-        <div class="btn btn-primary">Unlock video</div>
+        <div class="btn" style="color:#a04040; border-color:#d8a0a0;">Cancel subscription</div>
+        <div class="tiny" style="text-align:center;">Cancels at end of current period</div>
       </div>
-      <div class="screen-label"><span class="screen-num">27</span>Video upgrade</div>
+      <div class="screen-label"><span class="screen-num">27a</span>Huddle Video — active</div>
     </div>
+
+    <!-- 27b Huddle Video — live call screen (Jitsi embedded) -->
+    <div class="screen">
+      <div class="screen-frame" style="background:#0f0f14;">
+        <div class="status" style="color:rgba(255,255,255,0.4);"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:10px; color:rgba(255,255,255,0.6);">Huddle Video</div>
+          <div style="font-size:9px; color:rgba(255,255,255,0.4);">Maya · 28</div>
+          <div style="font-size:9px; color:rgba(255,255,255,0.4);">12:34</div>
+        </div>
+        <!-- Simulated video call — Jitsi embedded iframe area -->
+        <div style="flex:1; background:#1a1a24; border-radius:10px; margin:6px 0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; position:relative; overflow:hidden;">
+          <!-- Other person video area -->
+          <div style="position:absolute; inset:0; background:linear-gradient(160deg, rgba(240,196,192,0.15) 0%, rgba(180,140,180,0.1) 100%); display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; opacity:0.6;">
+              <div class="circle c-rose" style="width:50px; height:50px; margin:0 auto 8px;"></div>
+              <div style="font-size:10px; color:white;">Maya</div>
+            </div>
+          </div>
+          <!-- Self-view pip -->
+          <div style="position:absolute; bottom:10px; right:10px; width:44px; height:60px; background:#2a2a36; border-radius:6px; border:1.5px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center;">
+            <div class="circle c-sand" style="width:20px; height:20px;"></div>
+          </div>
+          <!-- Jitsi note -->
+          <div style="position:absolute; top:8px; left:8px; font-size:7px; color:rgba(255,255,255,0.25); letter-spacing:0.06em;">Secure · embedded · no app switch</div>
+        </div>
+        <!-- Controls -->
+        <div style="display:flex; justify-content:space-around; align-items:center; padding:4px 0;">
+          <div style="width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:12px;">🔇</div>
+          <div style="width:42px; height:42px; border-radius:50%; background:#c04040; display:flex; align-items:center; justify-content:center; font-size:14px; color:white; box-shadow:0 2px 8px rgba(192,64,64,0.4);">✕</div>
+          <div style="width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:12px;">📷</div>
+        </div>
+        <div class="tiny" style="text-align:center; color:rgba(255,255,255,0.35);">Tap ✕ to end call</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">27b</span>Huddle Video — live call</div>
+    </div>
+
+    <!-- 27c Huddle Video — call ended / smooth return -->
+    <div class="screen">
+      <div class="screen-frame">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:0 14px;">
+          <div style="width:44px; height:44px; border-radius:50%; background:#ECECE8; display:flex; align-items:center; justify-content:center; font-size:18px;">♡</div>
+          <div style="text-align:center;">
+            <div class="h">Call ended</div>
+            <div class="sub" style="margin-top:4px;">Returning to your chat with Maya…</div>
+          </div>
+          <div class="tiny" style="text-align:center; line-height:1.6; color:var(--ink-soft);">Your conversation is right where you left it. No history is stored from the call.</div>
+        </div>
+        <div class="btn btn-primary">Back to chat</div>
+        <div class="btn btn-ghost">Back to Island</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">27c</span>Huddle Video — call ended</div>
+    </div>
+
+
 
   </div>
 </section>
@@ -2389,7 +2486,7 @@
       <div class="screen-label"><span class="screen-num">35</span>Verification fee</div>
     </div>
 
-    <!-- 36 Optional extras -->
+    <!-- 36 Optional extras + Bundle -->
     <div class="screen">
       <div class="screen-frame">
         <div class="status"><span>9:41</span><span>•••</span></div>
@@ -2400,43 +2497,112 @@
         </div>
         <div class="sub">Expression only · never affects matching</div>
         <div style="height:4px;"></div>
-        <div class="col">
-          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px;">
+        <div class="col" style="gap:5px;">
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px;">
             <div style="flex:1;">
-              <div style="font-size:11px; font-weight:500;">Glow Pass</div>
-              <div class="tiny">Soft glow around your tile · monthly</div>
+              <div style="font-size:10px; font-weight:500;">Voice Clip Pack</div>
+              <div class="tiny">Themed audio styles</div>
             </div>
-            <span class="pill" style="font-size:9px;">— —</span>
+            <span class="pill" style="font-size:8px;">— —</span>
           </div>
-          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px;">
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px;">
             <div style="flex:1;">
-              <div style="font-size:11px; font-weight:500;">Voice Clip Pack</div>
-              <div class="tiny">Themed audio styles · monthly</div>
+              <div style="font-size:10px; font-weight:500;">Emojis Pack</div>
+              <div class="tiny">Extra expressive emojis</div>
             </div>
-            <span class="pill" style="font-size:9px;">— —</span>
+            <span class="pill" style="font-size:8px;">— —</span>
           </div>
-          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px;">
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px;">
             <div style="flex:1;">
-              <div style="font-size:11px; font-weight:500;">Island Style Pack</div>
-              <div class="tiny">Customise your island presence</div>
+              <div style="font-size:10px; font-weight:500;">Flowers & Gifts</div>
+              <div class="tiny">Common, seasonal, rare</div>
             </div>
-            <span class="pill" style="font-size:9px;">— —</span>
+            <span class="pill" style="font-size:8px;">— —</span>
           </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px;">
+            <div style="flex:1;">
+              <div style="font-size:10px; font-weight:500;">Glow Pass</div>
+              <div class="tiny">Soft glow around your tile</div>
+            </div>
+            <span class="pill" style="font-size:8px;">— —</span>
+          </div>
+          <!-- Huddle Video as bundle add-on -->
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px; border-color:#a0b8c0;">
+            <div style="flex:1;">
+              <div style="font-size:10px; font-weight:500;">📹 Huddle Video</div>
+              <div class="tiny">1‑to‑1 private video · connection only</div>
+            </div>
+            <span class="pill" style="font-size:8px; background:#e8f0f4; color:#2a5a6a;">£6.99</span>
+          </div>
+          <!-- Ultimate Bundle -->
           <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:10px; border:2px solid #1a1a1a;">
             <div style="flex:1;">
-              <div style="font-size:11px; font-weight:500;">Ultimate Bundle</div>
-              <div class="tiny">All packs + monthly rare gift</div>
+              <div style="font-size:11px; font-weight:600;">Ultimate Bundle</div>
+              <div class="tiny">Voice + Emojis + Flowers + Glow + Huddle Video</div>
             </div>
-            <span class="pill pill-active" style="font-size:9px;">— —</span>
+            <span class="pill pill-active" style="font-size:8px;">— —</span>
           </div>
         </div>
-        <div class="box-soft" style="font-size:9px; line-height:1.5;">
-          No paywalls on connection. No "see who liked you". No visibility boosts. Cosmetics never change who you see.
+        <div class="tiny" style="font-size:7px; color:var(--ink-faint);">All bundle items orderable & editable in Admin</div>
+        <!-- Huddle Rooms — SEPARATE, never in bundle -->
+        <div style="margin-top:8px; border-top:1px dashed var(--line); padding-top:8px;">
+          <div style="font-size:8px; font-weight:700; letter-spacing:0.1em; color:var(--ink-faint); margin-bottom:4px;">SEPARATE — NEVER IN BUNDLE</div>
+          <div class="box" style="background:#F8F4F0; border-color:#c8b8a0; padding:8px 10px;">
+            <div style="font-size:10px; font-weight:600;">Huddle Rooms / Social Event Rooms</div>
+            <div class="tiny" style="margin-top:2px;">Own pricing · own payment flow · always separate</div>
+            <div class="tiny" style="margin-top:2px; color:#7a5a3a;">Editable in Admin · never bundled</div>
+          </div>
         </div>
-        <div class="tiny">Cancel anytime in Settings.</div>
       </div>
-      <div class="screen-label"><span class="screen-num">36</span>Optional extras</div>
+      <div class="screen-label"><span class="screen-num">36</span>Optional extras + bundle</div>
     </div>
+
+    <!-- 36a Admin — bundle & pricing control -->
+    <div class="screen">
+      <div class="screen-frame" style="background:#F5F5F0;">
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="font-size:8px; font-weight:700; letter-spacing:0.12em; color:var(--ink-faint); margin-bottom:4px;">ADMIN PANEL</div>
+        <div class="h" style="font-size:13px;">Pricing & bundles</div>
+        <div style="height:6px;"></div>
+        <div class="col" style="gap:5px; flex:1; overflow-y:auto;">
+          <div style="font-size:8px; font-weight:600; letter-spacing:0.08em; color:var(--ink-faint);">BUNDLE ITEMS (orderable)</div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:7px 8px;">
+            <div style="font-size:9px; font-weight:500;">Voice Clip Pack</div>
+            <div style="font-size:9px; color:#1a1a1a; font-weight:600;">£—</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:7px 8px;">
+            <div style="font-size:9px; font-weight:500;">Emojis Pack</div>
+            <div style="font-size:9px; font-weight:600;">£—</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:7px 8px;">
+            <div style="font-size:9px; font-weight:500;">Flowers & Gifts</div>
+            <div style="font-size:9px; font-weight:600;">£—</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:7px 8px;">
+            <div style="font-size:9px; font-weight:500;">Glow Pass</div>
+            <div style="font-size:9px; font-weight:600;">£—</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:7px 8px; border-color:#a0b8c0;">
+            <div style="font-size:9px; font-weight:500;">📹 Huddle Video</div>
+            <div style="font-size:9px; font-weight:600; color:#2a5a6a;">£6.99</div>
+          </div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:7px 8px; border:1.5px solid #1a1a1a;">
+            <div style="font-size:9px; font-weight:600;">Ultimate Bundle total</div>
+            <div style="font-size:9px; font-weight:600;">£—</div>
+          </div>
+          <div style="height:4px; border-top:1px dashed var(--line);"></div>
+          <div style="font-size:8px; font-weight:600; letter-spacing:0.08em; color:var(--ink-faint);">SEPARATE (never bundled)</div>
+          <div class="box" style="display:flex; justify-content:space-between; align-items:center; padding:7px 8px; background:#F8F4F0; border-color:#c8b8a0;">
+            <div style="font-size:9px; font-weight:500;">Huddle Rooms / Events</div>
+            <div style="font-size:9px; font-weight:600; color:#7a5a3a;">£—</div>
+          </div>
+        </div>
+        <div class="tiny" style="text-align:center; margin-top:6px;">All prices editable · changes apply immediately</div>
+      </div>
+      <div class="screen-label"><span class="screen-num">36a</span>Admin — pricing control</div>
+    </div>
+
+
 
   </div>
 </section>
