@@ -1105,6 +1105,46 @@
       <div class="screen-label"><span class="screen-num">13b</span>Island — populated</div>
     </div>
 
+    <!-- 13b-fp Island — future-proofing placeholders shown -->
+    <div class="screen">
+      <div class="screen-frame island">
+        <div class="ambient-orb" style="width:90px; height:90px; top:-10px; right:-20px; background:rgba(255,235,180,0.5);"></div>
+        <div class="ambient-orb" style="width:70px; height:70px; bottom:80px; left:-15px; background:rgba(184,212,176,0.5);"></div>
+        <div class="status"><span>9:41</span><span>•••</span></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="h">Island</div>
+          <div class="circle c-stone" style="width:22px; height:22px;"></div>
+        </div>
+        <!-- FUTURE-PROOF A: Feature Highlight Banner — hidden by default, sits directly under header -->
+        <div style="background:rgba(200,200,196,0.45); border:1px dashed rgba(0,0,0,0.18); border-radius:5px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between;">
+          <div style="font-size:8px; color:#6b6b6b; font-style:italic;">Feature Highlight Banner</div>
+          <div style="font-size:7px; color:#9a9a9a; font-weight:500; letter-spacing:0.06em;">HIDDEN BY DEFAULT</div>
+        </div>
+        <div class="canvas" style="flex:1;">
+          <div class="floating-tile" style="top:8px; left:14px;"><div class="circle c-rose" style="width:26px; height:26px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:34px; left:78px;"><div class="circle c-sand" style="width:28px; height:28px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="top:80px; left:28px;"><div class="circle c-sage" style="width:24px; height:24px;"></div><div class="feet"></div></div>
+          <div class="floating-tile" style="bottom:40px; right:20px;"><div class="circle c-dusk" style="width:26px; height:26px;"></div><div class="feet"></div></div>
+          <!-- FUTURE-PROOF B: Future Event Space Tile — after all room tiles -->
+          <div style="position:absolute; bottom:6px; left:8px; right:8px; background:rgba(200,200,196,0.4); border:1px dashed rgba(0,0,0,0.2); border-radius:8px; padding:7px 10px; display:flex; align-items:center; justify-content:space-between;">
+            <div>
+              <div style="font-size:8px; font-weight:500; color:#6b6b6b;">Future Event Space</div>
+              <div style="font-size:7px; color:#9a9a9a;">Coming Soon</div>
+            </div>
+            <div style="font-size:9px; color:#aaaaaa;">＋</div>
+          </div>
+        </div>
+        <div class="row" style="margin-top:4px;">
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Rooms</div>
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Saved</div>
+          <div class="btn btn-ghost" style="flex:1; background:rgba(255,255,255,0.5);">Profile</div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">13b-fp</span>Island — future-proof placeholders</div>
+    </div>
+
+
+
     <!-- 13f Island — environment with billboard -->
     <div class="screen">
       <div class="screen-frame island" style="position:relative;">
@@ -1583,6 +1623,41 @@
       </div>
       <div class="screen-label"><span class="screen-num">SYS-D</span>AI safety monitoring</div>
     </div>
+
+    <!-- SYS-E Pay Table Placeholder (backend future-proofing) -->
+    <div class="screen">
+      <div class="screen-frame" style="background:#F8F8F5;">
+        <div style="font-size:8px; font-weight:700; letter-spacing:0.12em; color:var(--ink-faint); margin-bottom:4px;">SYSTEM ANNOTATION · SYS-E</div>
+        <div class="h">Pay Table Placeholder</div>
+        <div class="sub" style="margin-top:2px;">Backend · future optional paid items</div>
+        <div style="height:8px;"></div>
+        <div class="col" style="gap:8px; flex:1;">
+          <div class="box" style="font-size:9px; line-height:1.6;">
+            <div style="font-weight:600; margin-bottom:4px;">Purpose</div>
+            Prepares the backend for optional paid extras in the future — theme packs, special events, cosmetic upgrades, seasonal features, premium filters. Activates instantly when needed. No backend rebuild required.
+          </div>
+          <div class="box" style="font-size:9px; line-height:1.5; background:#f0f0ec;">
+            <div style="font-weight:600; margin-bottom:6px; font-family:monospace; font-size:8px; letter-spacing:0.06em;">Backend-only · No UI required</div>
+            <div style="font-family:monospace; font-size:8px; line-height:2; color:#444;">
+              item_id<br/>
+              item_name<br/>
+              item_type<br/>
+              price<br/>
+              active<br/>
+              visible<br/>
+              description<br/>
+              future_use_only
+            </div>
+          </div>
+          <div class="box-soft" style="font-size:9px; line-height:1.5;">
+            Does not activate anything now. No UI. No logic. No paywalls. Just a backend hook for future optional extras.
+          </div>
+        </div>
+      </div>
+      <div class="screen-label"><span class="screen-num">SYS-E</span>Pay Table — backend placeholder</div>
+    </div>
+
+
 
   </div>
 </section>
